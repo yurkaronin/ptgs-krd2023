@@ -1,0 +1,34 @@
+.phone {
+  font-size: 16px;
+  font-weight: 700;
+  letter-spacing: 0.8px;
+  text-transform: uppercase;
+  position: relative;
+  transition: all 0.3s;
+  &:after {
+    content: "";
+    position: absolute;
+    width: 100%;
+    height: 1px;
+    transition-property: all;
+    background: var(--LightBlue);
+    transform: scale(0, 1);
+    top: 95%;
+    left: 0;
+    transition-duration: 0.4s;
+    transition-timing-function: ease;
+  }
+  path {
+    transition: all 0.3s;
+  }
+  &:hover {
+    color: var(--LightBlue);
+    path {
+      fill: var(--LightBlue);
+      stroke: var(--LightBlue);
+    }
+    &:after {
+      transform: scale(1);
+    }
+  }
+}

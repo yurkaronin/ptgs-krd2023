@@ -1,3 +1,44 @@
 .header {
-
+  padding-top: 24px;
+  padding-bottom: 24px;
+  &__flex {
+    display: flex;
+    align-items: center;
+  }
+  &__logo {
+    max-width: 136px;
+    width: 100%;
+    display: block;
+    margin-right: 140px;
+    img {
+      display: block;
+    }
+  }
+  .main-navigation {
+    flex-grow: 2;
+    margin-right: 32px;
+  }
+  .phone {
+    max-width: 190px;
+    margin-right: 32px;
+  }
+  .email {
+    max-width: 115px;
+    margin-right: 32px;
+  }
+  &__search {
+    display: flex;
+    max-width: max-content;
+    svg path {
+      transition: all 0.3s;
+    }
+    svg {
+      transition: all 0.3s;
+    }
+    &:hover {
+      svg path {
+        stroke: var(--LightBlue);
+      }
+    }
+  }
 }
