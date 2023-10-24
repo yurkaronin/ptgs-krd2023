@@ -301,12 +301,6 @@ input[type=radio].visually-hidden {
   transition: all 0.3s;
   border-radius: 4px;
 }
-.main-navigation__item:hover {
-  background-color: var(--Blue);
-}
-.main-navigation__item:hover svg {
-  transform: translateY(0);
-}
 .main-navigation__link {
   color: var(--White);
   font-family: var(--Oswald);
@@ -342,6 +336,15 @@ input[type=radio].visually-hidden {
 .main-navigation__link:hover svg path:last-of-type {
   opacity: 1;
 }
+.main-navigation__decorate {
+  width: 100%;
+  height: 20px;
+  background-color: transparent;
+  position: absolute;
+  bottom: 4px;
+  left: 0;
+  transition: all 0.3s;
+}
 .main-navigation__sublist {
   position: absolute;
   width: 335px;
@@ -353,7 +356,7 @@ input[type=radio].visually-hidden {
   background-color: var(--Blue);
   padding: 7px 9px;
   border-radius: 4px;
-  margin-top: -4px;
+  margin-top: 8px;
 }
 .main-navigation__sublink {
   color: var(--White);
@@ -377,17 +380,34 @@ input[type=radio].visually-hidden {
 .main-navigation__sublink path {
   transition: all 0.3s;
 }
-.main-navigation__sublink:hover {
-  background-color: var(--LightBlue);
+.main-navigation__item:hover {
+  background-color: var(--Blue);
 }
-.main-navigation__sublink:hover path {
-  stroke: var(--White);
+.main-navigation__item:hover svg {
+  transform: translateY(0);
+}
+.main-navigation__item:hover .main-navigation__link {
+  background-color: var(--Blue);
+}
+.main-navigation__item:hover .main-navigation__decorate {
+  transform: translateY(15px);
+  background-color: var(--Blue);
 }
 .main-navigation__item:hover .main-navigation__sublist {
   background-color: var(--Blue);
   opacity: 1;
   visibility: initial;
   pointer-events: initial;
+}
+.main-navigation__item:hover .main-navigation__link path {
+  stroke: var(--White);
+  opacity: 1;
+}
+.main-navigation__sublink:hover {
+  background-color: var(--LightBlue);
+}
+.main-navigation__sublink:hover path {
+  stroke: var(--White);
 }
 .main-navigation__item:has(.active) {
   background-color: var(--LightBlue);
