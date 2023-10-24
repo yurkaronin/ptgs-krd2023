@@ -1,0 +1,16 @@
+.menu-accordion-active {
+  .mobile-icon {
+    transform: rotate(-90deg) !important;
+    path {
+      stroke: var(--LightBlue) !important;
+    }
+  }
+  .main-navigation__sublist {
+    max-height: 1200px;
+    overflow: initial;
+    visibility: initial;
+    pointer-events: initial;
+    margin-top: 15px;
+    margin-bottom: 25px;
+  }
+}

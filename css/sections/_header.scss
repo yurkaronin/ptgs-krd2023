@@ -1,34 +1,45 @@
 .header {
-  padding-top: 24px;
-  padding-bottom: 24px;
   &__flex {
     display: flex;
     align-items: center;
+    padding-top: 24px;
+    padding-bottom: 24px;
+    border-bottom: 1px solid var(--White2);
   }
   &__logo {
     max-width: 136px;
     width: 100%;
     display: block;
-    margin-right: 140px;
+    margin-right: 32px;
+    flex-shrink: 0;
+    position: relative;
+    z-index: 10;
     img {
       display: block;
     }
   }
   .main-navigation {
-    flex-grow: 2;
     margin-right: 32px;
+    max-width: max-content;
+    margin-left: auto;
   }
   .phone {
     max-width: 190px;
     margin-right: 32px;
+    position: relative;
+    z-index: 10;
   }
   .email {
     max-width: 115px;
     margin-right: 32px;
+    position: relative;
+    z-index: 10;
   }
   &__search {
     display: flex;
     max-width: max-content;
+    position: relative;
+    z-index: 10;
     svg path {
       transition: all 0.3s;
     }
@@ -38,6 +49,117 @@
     &:hover {
       svg path {
         stroke: var(--LightBlue);
+      }
+    }
+  }
+  .button-menu {
+    display: none;
+    position: relative;
+    z-index: 20;
+  }
+  .mobile-details {
+    display: none;
+  }
+
+  @media (max-width: 1247px) {
+    &__flex {
+      overflow: hidden;
+    }
+    &__logo {
+      background-color: #162a72;
+      &::before {
+        content: "";
+        display: block;
+        position: absolute;
+        background-color: #162a72;
+        pointer-events: none;
+        height: 100%;
+        width: 1000px;
+        z-index: 0;
+        left: 100%;
+      }
+      img {
+        position: relative;
+      }
+    }
+    .main-navigation {
+      position: absolute;
+      background-color: var(--DarkBlue);
+      width: 100%;
+      max-width: 100%;
+      top: 0;
+      left: 0;
+      right: 0;
+      height: 100vh;
+      overflow-y: auto;
+      margin: 0;
+      padding-top: 180px;
+      padding-bottom: 100px;
+      padding-left: 50px;
+      padding-right: 50px;
+    }
+    .phone {
+      margin-left: auto;
+    }
+    .button-menu {
+      display: flex;
+      margin-left: 23px;
+    }
+  }
+
+  @media (max-width: 767px) {
+    .phone {
+      display: none;
+    }
+    .email {
+      display: none;
+    }
+    .main-navigation {
+      padding-top: 115px;
+      padding-left: 20px;
+      padding-right: 20px;
+    }
+    &__flex {
+      padding-top: 15px;
+      padding-bottom: 15px;
+    }
+    &__logo {
+      margin-right: auto;
+      max-width: 115px;
+    }
+    .mobile-details {
+      margin-top: 20px;
+      display: block;
+      color: #fff;
+      font-size: 20px;
+      font-style: normal;
+      font-weight: 700;
+      letter-spacing: 1px;
+      text-transform: uppercase;
+      .phone {
+        display: flex;
+        align-items: center;
+        margin-bottom: 16px;
+        max-width: 100%;
+        width: 100%;
+        color: #fff;
+        font-size: 20px;
+        font-style: normal;
+        font-weight: 700;
+        letter-spacing: 1px;
+        text-transform: uppercase;
+        span {
+          margin-left: 6px;
+        }
+      }
+      .email {
+        display: block;
+        color: var(--LightBlue);
+        font-size: 20px;
+        font-style: normal;
+        font-weight: 700;
+        letter-spacing: 1px;
+        text-transform: uppercase;
       }
     }
   }

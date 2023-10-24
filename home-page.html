@@ -28,16 +28,24 @@
         <a href="./home-page.html" class="header__logo">
           <img src="./img/logotype/logo-header.svg" alt="Логотип ПетроГазСтрой" width="136" loading="lazy">
         </a>
-
+        <!-- основное десктопное меню  -->
         <nav class="main-navigation">
           <ul class="main-navigation__list list-reset">
+
             <li class="main-navigation__item">
-              <a class="main-navigation__link active" href="#">
+              <a class="main-navigation__link js-accordion-link" href="#">
                 <span>О компании</span>
-                <svg width="10" height="12" viewBox="0 0 10 12" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <svg class="desktop-icon" width="10" height="12" viewBox="0 0 10 12" fill="none"
+                  xmlns="http://www.w3.org/2000/svg">
                   <path d="M9 6L5 10L1 6" stroke="#ffffff" stroke-width="2" />
                   <path d="M9 1L5 5L1 1" stroke="#0066B3" stroke-width="2" />
                 </svg>
+                <svg class="mobile-icon" width="19" height="34" viewBox="0 0 19 34" fill="none"
+                  xmlns="http://www.w3.org/2000/svg">
+                  <path d="M1 1L17 17L1 33" stroke="white" stroke-width="2" />
+                </svg>
+
+
               </a>
               <div class="main-navigation__decorate"></div>
               <ul class="main-navigation__sublist list-reset">
@@ -47,7 +55,7 @@
                       <path d="M1 1L5 5L1 9" stroke="white" stroke-width="2" />
                       <path d="M6 1L10 5L6 9" stroke="#0066B3" stroke-width="2" />
                     </svg>
-                    <span>Название</span>
+                    <span>О компании</span>
                   </a>
                 </li>
                 <li class="main-navigation__subitem">
@@ -56,7 +64,7 @@
                       <path d="M1 1L5 5L1 9" stroke="white" stroke-width="2" />
                       <path d="M6 1L10 5L6 9" stroke="#0066B3" stroke-width="2" />
                     </svg>
-                    <span>Название</span>
+                    <span>Клиенты</span>
                   </a>
                 </li>
                 <li class="main-navigation__subitem">
@@ -65,7 +73,7 @@
                       <path d="M1 1L5 5L1 9" stroke="white" stroke-width="2" />
                       <path d="M6 1L10 5L6 9" stroke="#0066B3" stroke-width="2" />
                     </svg>
-                    <span>Название</span>
+                    <span>Руководство</span>
                   </a>
                 </li>
                 <li class="main-navigation__subitem">
@@ -74,17 +82,22 @@
                       <path d="M1 1L5 5L1 9" stroke="white" stroke-width="2" />
                       <path d="M6 1L10 5L6 9" stroke="#0066B3" stroke-width="2" />
                     </svg>
-                    <span>Название</span>
+                    <span>Документы</span>
                   </a>
                 </li>
               </ul>
             </li>
             <li class="main-navigation__item">
-              <a class="main-navigation__link" href="#">
+              <a class="main-navigation__link js-accordion-link" href="#">
                 <span>Направления</span>
-                <svg width="10" height="12" viewBox="0 0 10 12" fill="none" xmlns="http://www.w3.org/2000/svg">
-                  <path d="M9 6L5 10L1 6" stroke="#0066B3" stroke-width="2" />
-                  <path d="M9 1L5 5L1 1" stroke="white" stroke-width="2" />
+                <svg class="desktop-icon" width="10" height="12" viewBox="0 0 10 12" fill="none"
+                  xmlns="http://www.w3.org/2000/svg">
+                  <path d="M9 6L5 10L1 6" stroke="#ffffff" stroke-width="2" />
+                  <path d="M9 1L5 5L1 1" stroke="#0066B3" stroke-width="2" />
+                </svg>
+                <svg class="mobile-icon" width="19" height="34" viewBox="0 0 19 34" fill="none"
+                  xmlns="http://www.w3.org/2000/svg">
+                  <path d="M1 1L17 17L1 33" stroke="white" stroke-width="2" />
                 </svg>
               </a>
               <div class="main-navigation__decorate"></div>
@@ -146,12 +159,34 @@
               </ul>
             </li>
             <li class="main-navigation__item">
-              <a class="main-navigation__link" href="#"><span>Проекты</span></a>
+              <a class="main-navigation__link" href="#"><span>Проекты</span>
+                <svg class="mobile-icon" width="19" height="34" viewBox="0 0 19 34" fill="none"
+                  xmlns="http://www.w3.org/2000/svg">
+                  <path d="M1 1L17 17L1 33" stroke="white" stroke-width="2" />
+                </svg>
+              </a>
+
             </li>
             <li class="main-navigation__item">
-              <a class="main-navigation__link" href="#"><span>Контакты</span></a>
+              <a class="main-navigation__link" href="#"><span>Контакты</span>
+                <svg class="mobile-icon" width="19" height="34" viewBox="0 0 19 34" fill="none"
+                  xmlns="http://www.w3.org/2000/svg">
+                  <path d="M1 1L17 17L1 33" stroke="white" stroke-width="2" />
+                </svg>
+              </a>
+
             </li>
           </ul>
+          <div class="mobile-details">
+            <a href="tel:+78123855019" class="phone">
+              <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="none">
+                <path fill="#fff" stroke="#fff" stroke-miterlimit="10" stroke-width="2"
+                  d="m10.408 12.574.557.15.409-.409 1.074-1.075c.847.43 1.715 1.02 2.42 1.628a9.21 9.21 0 0 1-.942 2.072c-1.556-.243-4.787-1.254-8.2-4.667C2.314 6.86 1.303 3.63 1.06 2.074a9.197 9.197 0 0 1 2.071-.942 12.578 12.578 0 0 1 1.629 2.42L3.685 4.626l-.408.409.15.558c.193.722.9 2.344 2.768 4.212 1.869 1.87 3.49 2.575 4.213 2.769Z" />
+              </svg>
+              <span>+7 (812) 385-50-19</span>
+            </a>
+            <a href="mailto:info@ptgs.ru" class="email">info@ptgs.ru</a>
+          </div>
         </nav>
 
         <a href="tel:+78123855019" class="phone">
@@ -168,6 +203,9 @@
               d="M9.885 18.77a8.885 8.885 0 1 0 0-17.77 8.885 8.885 0 0 0 0 17.77ZM16.23 16.23 23 23" />
           </svg>
         </a>
+        <button class="button-menu button" type="button">
+          <span class="button-menu__toggle"></span>
+        </button>
       </div>
 
     </div>

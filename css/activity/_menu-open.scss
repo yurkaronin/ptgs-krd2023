@@ -1,0 +1,8 @@
+.menu-open {
+  overflow: hidden;
+  .main-navigation {
+    opacity: 1;
+    visibility: initial;
+    pointer-events: initial;
+  }
+}
