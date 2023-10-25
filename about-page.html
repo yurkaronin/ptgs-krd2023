@@ -4,7 +4,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Главная</title>
+  <title>О компании</title>
 
   <link rel="apple-touch-icon" sizes="180x180" href="./favicon/apple-touch-icon.png">
   <link rel="icon" type="image/png" sizes="32x32" href="./favicon/favicon-32x32.png">
@@ -19,7 +19,7 @@
   <link rel="stylesheet" href="./css/style.css">
 </head>
 
-<body class="body">
+<body class="body about-page">
 
   <header class="header">
     <div class="wrapper">
@@ -35,10 +35,11 @@
             <li class="main-navigation__item">
               <a class="main-navigation__link js-accordion-link" href="#">
                 <span>О компании</span>
-                <svg class="desktop-icon" width="10" height="12" viewBox="0 0 10 12" fill="none" xmlns="http://www.w3.org/2000/svg">
-                  <path d="M9 6L5 10L1 6" stroke="white" stroke-width="2"/>
-                  <path d="M9 1L5 5L1 1" stroke="white" stroke-width="2"/>
-                  </svg>
+                <svg class="desktop-icon" width="10" height="12" viewBox="0 0 10 12" fill="none"
+                  xmlns="http://www.w3.org/2000/svg">
+                  <path d="M9 6L5 10L1 6" stroke="white" stroke-width="2" />
+                  <path d="M9 1L5 5L1 1" stroke="white" stroke-width="2" />
+                </svg>
 
 
                 <svg class="mobile-icon" width="19" height="34" viewBox="0 0 19 34" fill="none"
@@ -211,6 +212,7 @@
 
     </div>
   </header>
+
   <main class="main">
 
     <section class="home-screen">
@@ -218,28 +220,25 @@
 
         <div class="home-screen__image">
           <picture>
-            <source srcset="../img/home-screen/home-500.jpg" media="(max-width: 500px)" />
-            <img src="../img/home-screen/home.jpg" alt="фоновая картинка" width="1920" loading="lazy">
+            <source srcset="../img/home-screen/about-us-500.jpg" media="(max-width: 500px)">
+            <img src="../img/home-screen/about-us.jpg" alt="фоновая картинка" width="1920" loading="lazy">
           </picture>
         </div>
 
         <div class="home-screen__flex">
-        <h1 class="title">ООО «ПетроГазСтрой»</h1>
-        <p class="text">Специализируемся на&nbsp;строительстве и&nbsp;капитальном ремонте наземных сооружений нефтяной и&nbsp;газовой промышленности.</p>
-        <a href="#" class="button">
-          <div class="button__icon">
-            <svg xmlns="http://www.w3.org/2000/svg" width="18" height="10" fill="none">
-              <path stroke="#0066B3" stroke-width="2" d="m12 1 4 4m0 0-4 4m4-4H0"/></svg>
-          </div>
-          <span class="button__text">Подробнее</span></a>
 
-        <a href="#" class="button button--scroll-down">
-          <div class="button__icon">
-            <svg xmlns="http://www.w3.org/2000/svg" width="10" height="18" fill="none"><path stroke="#0066B3" stroke-width="2" d="m9 12-4 4m0 0-4-4m4 4V0"/></svg>
+          <div class="breadcrumbs">
+            <ul class="breadcrumbs__list list-reset">
+              <li class="breadcrumbs__item">
+                <a class="breadcrumbs__link" href="#">Главная</a></li>
+              <li class="breadcrumbs__item">
+                <a class="breadcrumbs__link">О компании</a></li>
+            </ul>
           </div>
-          <span class="button__text">Скрольте вниз</span>
-        </a>
-      </div>
+
+
+          <h1 class="title">О компании</h1>
+        </div>
       </div>
     </section>
 
