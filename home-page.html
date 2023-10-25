@@ -19,7 +19,8 @@
   <link rel="stylesheet" href="./css/style.css">
 </head>
 
-<body>
+<body class="body">
+
   <header class="header">
     <div class="wrapper">
       <div class="header__flex">
@@ -28,18 +29,18 @@
         <a href="./home-page.html" class="header__logo">
           <img src="./img/logotype/logo-header.svg" alt="Логотип ПетроГазСтрой" width="136" loading="lazy">
         </a>
-        <!-- основное десктопное меню  -->
         <nav class="main-navigation">
           <ul class="main-navigation__list list-reset">
 
             <li class="main-navigation__item">
               <a class="main-navigation__link js-accordion-link" href="#">
                 <span>О компании</span>
-                <svg class="desktop-icon" width="10" height="12" viewBox="0 0 10 12" fill="none"
-                  xmlns="http://www.w3.org/2000/svg">
-                  <path d="M9 6L5 10L1 6" stroke="#ffffff" stroke-width="2" />
-                  <path d="M9 1L5 5L1 1" stroke="#0066B3" stroke-width="2" />
-                </svg>
+                <svg class="desktop-icon" width="10" height="12" viewBox="0 0 10 12" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <path d="M9 6L5 10L1 6" stroke="white" stroke-width="2"/>
+                  <path d="M9 1L5 5L1 1" stroke="white" stroke-width="2"/>
+                  </svg>
+
+
                 <svg class="mobile-icon" width="19" height="34" viewBox="0 0 19 34" fill="none"
                   xmlns="http://www.w3.org/2000/svg">
                   <path d="M1 1L17 17L1 33" stroke="white" stroke-width="2" />
@@ -214,12 +215,23 @@
 
     <section class="home-screen">
       <div class="wrapper">
+        <div class="home-screen__flex">
         <h1 class="title">ООО «ПетроГазСтрой»</h1>
-        <p class="text">Специализируемся на строительстве и капитальном ремонте наземных сооружений нефтяной и газовой
-          промышленности.</p>
-        <a href="#" class="button"><span>Подробнее</span></a>
+        <p class="text">Специализируемся на&nbsp;строительстве и&nbsp;капитальном ремонте наземных сооружений нефтяной и&nbsp;газовой промышленности.</p>
+        <a href="#" class="button">
+          <div class="button__icon">
+            <svg xmlns="http://www.w3.org/2000/svg" width="18" height="10" fill="none">
+              <path stroke="#0066B3" stroke-width="2" d="m12 1 4 4m0 0-4 4m4-4H0"/></svg>
+          </div>
+          <span class="button__text">Подробнее</span></a>
 
-        <a href="#" class="scroll-down"><span>Скрольте вниз</span></a>
+        <a href="#" class="button button--scroll-down">
+          <div class="button__icon">
+            <svg xmlns="http://www.w3.org/2000/svg" width="10" height="18" fill="none"><path stroke="#0066B3" stroke-width="2" d="m9 12-4 4m0 0-4-4m4 4V0"/></svg>
+          </div>
+          <span class="button__text">Скрольте вниз</span>
+        </a>
+      </div>
       </div>
     </section>
 

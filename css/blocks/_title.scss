@@ -1,22 +1,21 @@
-// .title {
-//   display: block;
-//   margin-top: 0;
-//   margin-bottom: 50px;
-//   position: relative;
-//   text-align: center;
-//   font-size: 34px;
-//   font-weight: 300;
-//   span {
-//     font-weight: 700;
-//     display: block;
-//   }
+.title {
+  display: block;
+  margin: 0;
+  position: relative;
+  color: var(--White);
+  font-family: var(--Oswald);
+  font-size: 56px;
+  line-height: 1.1;
+  font-style: normal;
+  font-weight: 400;
+  span {
+    color: var(--LightBlue);
+  }
 
-//   @media (max-width: 1023px) {
-//     font-size: 28px;
-//     margin-bottom: 30px;
-//   }
-//   @media (max-width: 767px) {
-//     font-size: 22px;
-//     margin-bottom: 24px;
-//   }
-// }
+  @media (max-width: 1600px) {
+    font-size: 40px;
+  }
+  @media (max-width: 767px) {
+    font-size: 25px;
+  }
+}

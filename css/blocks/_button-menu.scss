@@ -17,8 +17,7 @@
   flex-shrink: 0;
 
   &::before {
-    background: var(--LightBlue);
-    // border-radius: 50px;
+    display: none;
   }
   & span,
   & span::after,

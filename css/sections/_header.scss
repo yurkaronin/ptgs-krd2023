@@ -1,4 +1,11 @@
 .header {
+  transition: all 0.3s;
+  position: fixed;
+  top: 0;
+  max-width: 100%;
+  width: 100%;
+  z-index: 999;
+
   &__flex {
     display: flex;
     align-items: center;
@@ -14,8 +21,24 @@
     flex-shrink: 0;
     position: relative;
     z-index: 10;
+    transition: all 0.3s;
     img {
       display: block;
+      position: relative;
+    }
+    &::before {
+      content: "";
+      display: block;
+      position: absolute;
+      background-color: #162a72;
+      pointer-events: none;
+      height: 200px;
+      width: 100vw;
+      z-index: 0;
+      left: -20px;
+      bottom: -10px;
+      transition: all 0.3s;
+      opacity: 0;
     }
   }
   .main-navigation {
@@ -64,23 +87,6 @@
   @media (max-width: 1247px) {
     &__flex {
       overflow: hidden;
-    }
-    &__logo {
-      background-color: #162a72;
-      &::before {
-        content: "";
-        display: block;
-        position: absolute;
-        background-color: #162a72;
-        pointer-events: none;
-        height: 100%;
-        width: 1000px;
-        z-index: 0;
-        left: 100%;
-      }
-      img {
-        position: relative;
-      }
     }
     .main-navigation {
       position: absolute;
