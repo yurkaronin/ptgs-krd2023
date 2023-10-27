@@ -1,5 +1,6 @@
 .home-screen {
   position: relative;
+  overflow: hidden;
   &::after {
     content: "";
     position: absolute;
@@ -13,7 +14,7 @@
     background: linear-gradient(180deg, #162a75 0%, rgba(22, 42, 117, 0) 63.8%);
     z-index: 2;
   }
-  &__image {
+  &__image-bg {
     position: absolute;
     pointer-events: none;
     z-index: 0;
@@ -42,13 +43,74 @@
     position: relative;
     z-index: 10;
   }
+  &__grid {
+    display: grid;
+    gap: 32px;
+    grid-template-columns: 7fr 5fr;
+    min-height: 100vh;
+    padding-top: 150px;
+    padding-bottom: 0;
+    position: relative;
+    z-index: 5;
+    align-items: flex-end;
+  }
+  &__item-top {
+    padding-top: 30px;
+    align-self: flex-start;
+    max-width: 730px;
+  }
+  &__item-bottom {
+    padding-bottom: 70px;
+    grid-column: 1 / 2;
+    max-width: 730px;
+  }
+  &__item-right {
+    grid-column: 2 / 3;
+    grid-row: 1 / 3;
+  }
+  &__hero {
+    display: block;
+    max-width: 630px;
+    width: 100%;
+    transform: translateX(-40px);
+  }
+  &__name {
+    margin: 0;
+    display: block;
+    margin-bottom: 50px;
+    font-size: 48px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 1.12;
+  }
+  &__info {
+    display: block;
+    margin: 0;
+    color: var(--White);
+    font-family: var(--Roboto);
+    font-size: 18px;
+    font-weight: 400;
+    letter-spacing: 0.18px;
+    opacity: 0.7;
+  }
+  .section-label::before {
+    display: none;
+  }
   .button--scroll-down {
     margin-top: auto;
   }
   .title {
-    font-size: 100px;
-    margin-bottom: 0.1em;
-    font-weight: 600;
+    font-size: 72px;
+    font-weight: 400;
+    & + * {
+      margin-top: 37px;
+    }
+
+    &--big {
+      font-size: 100px;
+      font-weight: 600;
+      margin-bottom: 0.1em;
+    }
   }
   .text {
     font-size: 24px;
@@ -61,31 +123,140 @@
       padding-top: 175px;
       padding-bottom: calc(200px + 32px);
     }
+    &__left {
+      padding-bottom: 60px;
+    }
+    &__info {
+      max-width: 640px;
+    }
+    &__name {
+      margin-bottom: 35px;
+    }
     .button--scroll-down {
       display: none;
+    }
+    &__name {
+      font-size: 40px;
+    }
+    .title {
+      font-size: 56px;
     }
   }
 
   @media (max-width: 1279px) {
     &__flex {
       padding-top: 170px;
+      min-height: 648px;
     }
-    .title {
-      font-size: 80px;
+    &__grid {
+      gap: 22px 32px;
+    }
+    &__item-top {
+      padding-top: 0;
+    }
+    &__hero {
+      transform: none;
+    }
+    &__details {
+      position: relative;
     }
   }
   @media (max-width: 1023px) {
     &__flex {
       padding-top: 150px;
       padding-bottom: calc(150px + 16px);
+      min-height: 584px;
+    }
+    &__grid {
+      grid-template-columns: repeat(6, 1fr);
+      grid-template-rows: auto;
+      grid-auto-rows: none;
+      gap: 0;
+      position: relative;
+    }
+    &__item-top {
+      grid-column: 1 / span 4;
+      z-index: 2;
+      grid-row: 1/2;
+    }
+    &__item-bottom {
+      padding: 40px 0;
+      grid-column: 1/-1;
+      z-index: 2;
+      grid-row: 2/3;
+      background-color: var(--DarkBlue);
+      position: relative;
+      max-width: 100%;
+      &::before {
+        content: "";
+        position: absolute;
+        width: 200%;
+        height: 100%;
+        display: block;
+        top: 0;
+        left: -50%;
+        right: -50%;
+        background-color: var(--DarkBlue);
+      }
+    }
+    &__item-right {
+      grid-column: 4 / span 3;
+      z-index: 1;
+      grid-row: 1/2;
+      margin-left: -15px;
     }
     .title {
-      font-size: 64px;
+      font-size: 56px;
+      &--big {
+        font-size: 80px;
+      }
+    }
+    &__info {
+      max-width: 100%;
+    }
+    .title {
+      font-size: 48px;
+      &--big {
+        font-size: 64px;
+      }
+    }
+    .section-label {
+      margin-top: 0;
+      max-width: 330px;
     }
   }
   @media (max-width: 767px) {
     &__flex {
       padding-top: 110px;
+      min-height: 450px;
+    }
+    &__grid {
+      grid-template-columns: 1fr;
+      padding-top: 120px;
+    }
+    &__item-top {
+      grid-column: initial;
+      z-index: initial;
+      grid-row: initial;
+      margin-bottom: 24px;
+    }
+    &__item-bottom {
+      grid-column: initial;
+      z-index: initial;
+      grid-row: initial;
+      order: 3;
+    }
+    &__item-right {
+      grid-column: initial;
+      z-index: initial;
+      grid-row: initial;
+      margin-left: initial;
+    }
+    &__name {
+      font-size: 25px;
+    }
+    &__info {
+      font-size: 14px;
     }
     .title {
       font-size: 32px;
@@ -98,15 +269,5 @@
     &::after {
       background: linear-gradient(180deg, #162a75 0%, rgba(22, 42, 117, 0) 63.8%);
     }
-
-    &__image {
-      img {
-        background-position: right;
-        background-repeat: no-repeat;
-        background-size: cover;
-      }
-    }
-
-
   }
 }

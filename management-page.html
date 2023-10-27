@@ -4,7 +4,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>О компании</title>
+  <title>Руководство компании</title>
 
   <link rel="apple-touch-icon" sizes="180x180" href="./favicon/apple-touch-icon.png">
   <link rel="icon" type="image/png" sizes="32x32" href="./favicon/favicon-32x32.png">
@@ -19,7 +19,7 @@
   <link rel="stylesheet" href="./css/style.css">
 </head>
 
-<body class="body">
+<body class="body about-page">
 
   <header class="header">
     <div class="wrapper">
@@ -220,24 +220,43 @@
 
         <div class="home-screen__image-bg">
           <picture>
-            <source srcset="../img/home-screen/about-us-500.jpg" media="(max-width: 500px)">
-            <img src="../img/home-screen/about-us.jpg" alt="фоновая картинка" width="1920" loading="lazy">
+            <source srcset="../img/home-screen/management-500.jpg" media="(max-width: 500px)">
+            <img src="../img/home-screen/management.jpg" alt="фоновая картинка" width="1920" loading="lazy">
           </picture>
         </div>
 
-        <div class="home-screen__flex">
+        <div class="home-screen__grid">
 
-          <div class="breadcrumbs">
-            <ul class="breadcrumbs__list list-reset">
-              <li class="breadcrumbs__item">
-                <a class="breadcrumbs__link" href="#">Главная</a></li>
-              <li class="breadcrumbs__item">
-                <a class="breadcrumbs__link">О компании</a></li>
-            </ul>
+          <div class="home-screen__item-top">
+            <div class="breadcrumbs">
+              <ul class="breadcrumbs__list list-reset">
+                <li class="breadcrumbs__item">
+                  <a class="breadcrumbs__link" href="#">Главная</a>
+                </li>
+                <li class="breadcrumbs__item">
+                  <a class="breadcrumbs__link">Руководство компании</a>
+                </li>
+              </ul>
+            </div>
+            <h1 class="title">Руководство компании</h1>
           </div>
 
+          <div class="home-screen__item-bottom">
+            <h2 class="section-label">Генеральный директор</h2>
+            <div class="home-screen__details">
+              <h2 class="home-screen__name">Иван Иванович Иванов</h2>
+              <p class="home-screen__info">В 2022 году компания ПГС начала работу над проектом « Модернизация систем
+                учета расхода газа, качества газа и реконструкции ГИС ООО «Кавказтрансгаз» и успешно реализует его в
+                настоящее время, выполняя строительство объектов Газоизмерительная станция ДКС- 1 и Газоизмерительная
+                станция ДКС -2.
+              </p>
+            </div>
+          </div>
 
-          <h1 class="title">О компании</h1>
+          <div class="home-screen__item-right">
+            <img class="home-screen__hero" src="./img/team/hero.png" alt="фото руководителя" loading="lazy" width="630">
+          </div>
+
         </div>
       </div>
     </section>
