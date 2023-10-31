@@ -1,6 +1,7 @@
 .home-screen {
   position: relative;
   overflow: hidden;
+  z-index: 1;
   &::after {
     content: "";
     position: absolute;
@@ -141,12 +142,17 @@
     .title {
       font-size: 56px;
     }
+    &__grid {
+      .section-label {
+        max-width: 528px;
+      }
+    }
   }
 
   @media (max-width: 1279px) {
     &__flex {
       padding-top: 170px;
-      min-height: 648px;
+      // min-height: 648px;
     }
     &__grid {
       gap: 22px 32px;
@@ -165,7 +171,7 @@
     &__flex {
       padding-top: 150px;
       padding-bottom: calc(150px + 16px);
-      min-height: 584px;
+      // min-height: 584px;
     }
     &__grid {
       grid-template-columns: repeat(6, 1fr);
@@ -228,7 +234,7 @@
   @media (max-width: 767px) {
     &__flex {
       padding-top: 110px;
-      min-height: 450px;
+      min-height: 670px;
     }
     &__grid {
       grid-template-columns: 1fr;

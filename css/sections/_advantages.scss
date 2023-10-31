@@ -1,3 +1,226 @@
 .advantages {
-  display: none;
+  padding-top: 88px;
+  padding-bottom: 88px;
+  position: relative;
+  z-index: 2;
+  &__grid {
+    display: grid;
+    gap: 0 32px;
+    grid-template-columns: repeat(12, 1fr);
+  }
+  &__grid-left {
+    grid-column: 1/6;
+  }
+  &__grid-right {
+    grid-column: 7/13;
+    margin-top: calc(-208px + -88px);
+  }
+  &__grid-left-two {
+    grid-column: 1/6;
+  }
+  &__grid-right-two {
+    grid-column: 7/13;
+  }
+  &__list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: grid;
+    gap: 32px;
+    grid-template-columns: repeat(3, 1fr);
+  }
+  &__card {
+    transition: all 0.3s ease-in-out;
+    border-radius: 4px 4px;
+    overflow: hidden;
+  }
+  &__photo {
+    display: block;
+    max-width: 100%;
+    width: 100%;
+    height: 208px;
+    object-fit: cover;
+  }
+  &__details {
+    padding: 40px 40px 37px;
+    background-color: var(--LightBlue);
+    color: var(--White);
+    position: relative;
+  }
+  &__icon {
+    width: 80px;
+    height: 80px;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 24px;
+    margin-top: -80px;
+    &::before {
+      content: "";
+      position: absolute;
+      left: 0;
+      top: 0;
+      bottom: 0;
+      right: 0;
+      transition: all 0.3s ease-in-out;
+      pointer-events: none;
+      background-color: var(--White);
+      z-index: 0;
+      border-radius: 50%;
+    }
+    img {
+      display: block;
+      position: absolute;
+      flex-shrink: 0;
+    }
+  }
+  &__text {
+    margin: 0;
+    font-size: 18px;
+    font-style: normal;
+    font-weight: 400;
+    letter-spacing: 0.18px;
+  }
+  &__numbers {
+    display: block;
+    margin: 0;
+    margin-bottom: 12;
+    line-height: 1;
+    font-size: 80px;
+    font-weight: 700;
+  }
+  &__card:hover {
+    scale: 1.045;
+  }
+
+  &__card:hover &__icon::before {
+    left: -4px;
+    top: -4px;
+    bottom: -4px;
+    right: -4px;
+  }
+
+  &__card {
+    width: 100%;
+    max-width: 100%;
+  }
+  .title + * {
+    margin-top: 28px;
+  }
+  &__subtitle {
+    margin: 0;
+    font-family: var(--Roboto);
+    color: var(--White);
+    font-size: 18px;
+    font-style: normal;
+    font-weight: 400;
+    letter-spacing: 0.18px;
+    opacity: 0.8;
+  }
+  &__content {
+    margin-top: 53px;
+    h3 {
+      margin-top: 0;
+      margin-bottom: 36px;
+      font-size: 24px;
+      font-style: normal;
+      font-weight: 400;
+    }
+    ul {
+      font-family: var(--Roboto);
+      font-size: 18px;
+      font-style: normal;
+      font-weight: 400;
+      line-height: 1.55;
+      letter-spacing: 0.18px;
+      opacity: 0.8;
+      list-style: none;
+      padding: 0;
+      margin: 0;
+    }
+    li {
+      margin-bottom: 24px;
+      position: relative;
+      padding-left: 32px;
+      &::before {
+        content: "";
+        display: block;
+        width: 16px;
+        height: 2px;
+        background-color: var(--LightBlue);
+        top: 10px;
+        position: absolute;
+        left: 0;
+      }
+    }
+  }
+
+  @media (max-width: 1600px) {
+    &__list {
+      display: flex;
+      gap: 24px;
+      overflow: scroll;
+      margin-left: -100px;
+      transform: translateX(100px);
+      padding-right: 100px;
+      padding-bottom: 10px;
+    }
+    &__card {
+      max-width: 272px;
+      flex-shrink: 0;
+    }
+    &__grid {
+      gap: 0;
+    }
+    &__grid-right {
+      grid-column: 1/13;
+      order: -1;
+      margin-bottom: 72px;
+    }
+    &__grid-left {
+      grid-column: 1/13;
+    }
+  }
+  @media (max-width: 1023px) {
+    &__grid {
+      grid-template-columns: repeat(6, 1fr);
+    }
+    &__grid-left {
+      grid-column: 1/-1;
+    }
+    &__grid-right {
+      grid-column: 1/-1;
+    }
+  }
+  @media (max-width: 767px) {
+    &__grid {
+      gap: 15px;
+      grid-template-columns: repeat(2, 1fr);
+    }
+    &__grid-right {
+      margin-top: calc(-150px + -88px);
+    }
+    &__list {
+      margin-left: -50px;
+      transform: translateX(50px);
+      padding-right: 50px;
+      gap: 20px;
+    }
+    &__card {
+      max-width: 200px;
+    }
+    &__photo {
+      height: 150px;
+    }
+    &__numbers {
+      font-size: 56px;
+    }
+    &__text {
+      font-size: 16px;
+    }
+    &__details {
+      padding: 20px 20px;
+    }
+  }
 }
