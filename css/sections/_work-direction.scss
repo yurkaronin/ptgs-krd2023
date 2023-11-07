@@ -1,6 +1,8 @@
 .work-direction {
   // padding-top: 88px;
   padding-bottom: 80px;
+  position: relative;
+  z-index: 2;
   &__list {
     list-style: none;
     margin: 0;
@@ -9,6 +11,9 @@
     gap: 32px;
     grid-template-columns: repeat(4, 1fr);
     margin-top: 64px;
+  }
+  &__list--mod {
+    margin-top: -272px;
   }
   &__item {
     display: flex;
@@ -145,7 +150,7 @@
   @media (max-width: 1600px) {
     &__list {
       grid-template-columns: repeat(3, 1fr);
-      margin-top: 50px;
+      // margin-top: 50px;
     }
   }
   @media (max-width: 1279px) {
@@ -155,10 +160,16 @@
     &__image {
       height: 300px;
     }
+    &__list--mod {
+      margin-top: -300px;
+    }
   }
   @media (max-width: 1023px) {
     &__image {
       height: 216px;
+    }
+    &__list--mod {
+      margin-top: -216px;
     }
     &__item-details {
       padding: 16px 24px 24px;

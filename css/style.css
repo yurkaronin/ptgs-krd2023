@@ -1485,6 +1485,8 @@ input[type=radio].visually-hidden {
 
 .work-direction {
   padding-bottom: 80px;
+  position: relative;
+  z-index: 2;
 }
 .work-direction__list {
   list-style: none;
@@ -1494,6 +1496,9 @@ input[type=radio].visually-hidden {
   gap: 32px;
   grid-template-columns: repeat(4, 1fr);
   margin-top: 64px;
+}
+.work-direction__list--mod {
+  margin-top: -272px;
 }
 .work-direction__item {
   display: flex;
@@ -1620,7 +1625,6 @@ input[type=radio].visually-hidden {
 @media (max-width: 1600px) {
   .work-direction__list {
     grid-template-columns: repeat(3, 1fr);
-    margin-top: 50px;
   }
 }
 @media (max-width: 1279px) {
@@ -1630,10 +1634,16 @@ input[type=radio].visually-hidden {
   .work-direction__image {
     height: 300px;
   }
+  .work-direction__list--mod {
+    margin-top: -300px;
+  }
 }
 @media (max-width: 1023px) {
   .work-direction__image {
     height: 216px;
+  }
+  .work-direction__list--mod {
+    margin-top: -216px;
   }
   .work-direction__item-details {
     padding: 16px 24px 24px;
