@@ -769,11 +769,13 @@ input[type=radio].visually-hidden {
 .footer-accordion.active .footer-navigation__link svg {
   transform: rotate(-90deg);
 }
-.footer-accordion.active .footer-navigation__link {
-  padding-top: 40px;
-}
 .footer-accordion.active .footer-navigation__sublist {
   margin-bottom: 40px;
+}
+@media (max-width: 767px) {
+  .footer-accordion .footer-navigation__link {
+    padding-top: 40px;
+  }
 }
 
 .header {
