@@ -22,9 +22,11 @@
     position: relative;
     z-index: 10;
     transition: all 0.3s;
-    img {
+
+    svg {
       display: block;
       position: relative;
+    z-index: 10;
     }
     &::before {
       content: "";
@@ -39,6 +41,7 @@
       bottom: -10px;
       transition: all 0.3s;
       opacity: 0;
+      z-index: -1;
     }
   }
   .main-navigation {
@@ -82,6 +85,12 @@
   }
   .mobile-details {
     display: none;
+  }
+  .logotype-link__scroll {
+    display: none;
+  }
+  .logotype-link__desc {
+    display: block;
   }
 
   @media (max-width: 1247px) {
