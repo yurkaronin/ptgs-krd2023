@@ -10,8 +10,8 @@
   padding: 32px 0;
   transition: all 0.3s;
   visibility: hidden;
-    pointer-events: none;
-    opacity: 0;
+  pointer-events: none;
+  opacity: 0;
   &__flex {
     display: flex;
     align-items: center;
@@ -33,7 +33,6 @@
     margin-inline: 32px;
     display: flex;
     align-items: center;
-
   }
   .custom-form__input {
     padding: 4px;
@@ -71,6 +70,47 @@
     &__title {
       font-size: 24px;
       max-width: 140px;
+    }
+  }
+  @media (max-width: 1023px) {
+    &__flex {
+      flex-wrap: wrap;
+    }
+    &__title {
+      max-width: 100%;
+      flex-grow: 2;
+      margin-bottom: 20px;
+    }
+    .custom-form {
+      margin: 0;
+    }
+    .close {
+      position: absolute;
+      top: 32px;
+      right: 40px;
+    }
+    .button {
+      margin-left: 24px;
+    }
+  }
+  @media (max-width: 767px) {
+    padding: 20px 0;
+    .button {
+      margin-left: 10px;
+      padding: 9px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    .button__icon {
+      margin: 0;
+    }
+    .button__text {
+      display: none;
+    }
+    .close {
+      top: 20px;
+      right: 20px;
     }
   }
 }

@@ -4,11 +4,25 @@
   justify-content: center;
   background-color: transparent;
   border: none;
-  width: 32px;
-  height: 32px;
+  max-width: max-content;
 
   svg {
     pointer-events: none;
     flex-shrink: 0;
+    width: 32px;
+    height: 32px;
+  }
+  @media (max-width: 1023px) {
+    width: 30px;
+    height: 30px;
+    margin: 0;
+    padding: 0;
+    svg {
+      width: 30px;
+      height: 30px;
+    }
+  }
+  @media (max-width: 767px) {
+
   }
 }
