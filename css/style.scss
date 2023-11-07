@@ -22,6 +22,8 @@
 @import "blocks/address";
 @import "blocks/logotype-link";
 @import "blocks/footer-accordion";
+@import "blocks/close";
+@import "blocks/header-search";
 
 @import "sections/header";
 
@@ -40,3 +42,4 @@
 @import "activity/menu-accordion-active";
 @import "activity/menu-open";
 @import "activity/header-sticky";
+@import "activity/header-search-active";

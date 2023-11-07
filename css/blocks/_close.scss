@@ -1,0 +1,14 @@
+.close {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: transparent;
+  border: none;
+  width: 32px;
+  height: 32px;
+
+  svg {
+    pointer-events: none;
+    flex-shrink: 0;
+  }
+}

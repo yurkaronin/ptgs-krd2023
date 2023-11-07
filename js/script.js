@@ -98,7 +98,7 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   }
 
-
+  // Аккондиончики в подвале с менюшками
   // Получаем все элементы с классом .footer-accordion
   const accordions = document.querySelectorAll('.footer-accordion');
 
@@ -123,6 +123,32 @@ document.addEventListener("DOMContentLoaded", () => {
   accordions.forEach(function (accordion) {
     accordion.addEventListener('click', toggleAccordion);
   });
+
+
+  // показ блока поиска в шапке сайта
+  // Поиск элемента .js-show-me-header
+  var searchLink = document.querySelector('.js-show-me-header');
+
+  // Если элемент найден, то слушаем событие клика
+  if (searchLink) {
+    searchLink.addEventListener('click', function (event) {
+      // Отменяем действие по умолчанию для ссылки
+      event.preventDefault();
+
+      // Добавляем или удаляем класс .header-search-active у body
+      document.body.classList.toggle('header-search-active');
+    });
+  }
+
+  // Поиск элемента .close внутри .header-search и слушаем событие клика
+  var closeButton = document.querySelector('.header-search .close');
+  if (closeButton) {
+    closeButton.addEventListener('click', function () {
+      // Удаляем класс .header-search-active у body
+      document.body.classList.remove('header-search-active');
+    });
+  }
+
 
 });
 
