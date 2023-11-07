@@ -128,6 +128,8 @@
   --Roboto: "Roboto", sans-serif;
   --Oswald: "Oswald", sans-serif;
   --White: #ffffff;
+  --Gray: #E9E9E9;
+  --Black: #000000;
   --White2: rgba(255, 255, 255, 0.2);
   --DarkBlue: #162A75;
   --Blue: #0066B3;
@@ -548,6 +550,7 @@ input[type=radio].visually-hidden {
   padding-bottom: 35px;
   margin-bottom: 30px;
   border-bottom: 1px solid var(--White2);
+  max-width: 727px;
 }
 .section-label::after {
   content: "";
@@ -582,6 +585,39 @@ input[type=radio].visually-hidden {
   display: grid;
   gap: 32px;
   grid-template-columns: repeat(2, 1fr);
+}
+
+.swiper {
+  overflow: initial;
+}
+
+.swiper-button {
+  background-color: var(--DarkBlue);
+  width: 64px;
+  height: 64px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: none;
+}
+.swiper-button::after {
+  display: none;
+}
+.swiper-button svg {
+  pointer-events: none;
+  flex-shrink: 0;
+  width: 20px;
+}
+
+.swiper-button-next {
+  right: -34px;
+  left: initial;
+}
+
+.swiper-button-prev {
+  left: -34px;
+  right: initial;
 }
 
 .header {
@@ -1664,6 +1700,31 @@ input[type=radio].visually-hidden {
   .work-direction__item-details {
     padding: 16px 20px 20px;
   }
+}
+
+.customers .swiper {
+  margin-top: 56px;
+}
+.customers .swiper-slide {
+  background-color: var(--White);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 24px 24px;
+}
+.customers .swiper-slide img {
+  display: block;
+  max-width: 192px;
+  height: 112px;
+  width: 100%;
+  object-fit: contain;
+  flex-shrink: 0;
+}
+.customers .swiper-slide--mod {
+  background-color: var(--Black);
+}
+.customers .swiper-slide--mod2 {
+  background-color: var(--Gray);
 }
 
 .menu-accordion-active .mobile-icon {

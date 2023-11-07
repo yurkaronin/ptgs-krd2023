@@ -1,0 +1,29 @@
+.swiper {
+  overflow: initial;
+}
+.swiper-button {
+  background-color: var(--DarkBlue);
+  width: 64px;
+  height: 64px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: none;
+  &::after {
+    display: none;
+  }
+  svg {
+    pointer-events: none;
+    flex-shrink: 0;
+    width: 20px;
+  }
+}
+.swiper-button-next {
+  right: -34px;
+  left: initial;
+}
+.swiper-button-prev {
+  left: -34px;
+  right: initial;
+}

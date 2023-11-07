@@ -68,6 +68,39 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   });
 
+  if (document.querySelector('.customers .mySwiper')) {
+    console.log('Слайдер с логотипами есть!');
+    var swiperCustomers = new Swiper(".customers .mySwiper", {
+      // slidesPerView: 6,
+      spaceBetween: 32,
+      navigation: {
+        nextEl: ".customers .swiper-button-next",
+        prevEl: ".customers .swiper-button-prev",
+      },
+      breakpoints: {
+        // when window width is >= 320px
+        425: {
+          slidesPerView: 1
+        },
+        // when window width is >= 480px
+        767: {
+          slidesPerView: 2
+        },
+        1023: {
+          slidesPerView: 3
+        },
+        1279: {
+          slidesPerView: 4
+        },
+        // when window width is >= 640px
+        1600: {
+          slidesPerView: 6
+        }
+      }
+    });
+  }
+
+
 
 
 
