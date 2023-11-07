@@ -1,0 +1,33 @@
+.footer-accordion {
+  .footer-navigation__link svg {
+    transform: rotate(90deg);
+    transition: all 0.3s;
+  }
+
+  .footer-navigation__sublist {
+    max-height: 0;
+    overflow: hidden;
+    visibility: hidden;
+    pointer-events: none;
+    transition: all 0.3s;
+    margin: 0;
+  }
+  &.active {
+    .footer-navigation__sublist {
+      opacity: 1;
+      visibility: initial;
+      pointer-events: initial;
+      max-height: 1200px;
+      margin-bottom: 20px;
+    }
+    .footer-navigation__link svg {
+      transform: rotate(-90deg);
+    }
+    .footer-navigation__link {
+      padding-top: 40px;
+    }
+    .footer-navigation__sublist {
+      margin-bottom: 40px;
+    }
+  }
+}

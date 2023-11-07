@@ -1,0 +1,25 @@
+.developer {
+  display: flex;
+  align-items: center;
+  color: var(--Gray2);
+  font-family: var(--Roboto);
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 400;
+  letter-spacing: 0.16px;
+  svg {
+    width: 32px;
+    margin-right: 16px;
+  }
+  p {
+    margin: 0;
+    span {
+      color: var(--LightBlue);
+    }
+  }
+  &:hover {
+    span {
+      text-decoration: underline;
+    }
+  }
+}

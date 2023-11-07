@@ -1,0 +1,27 @@
+.address {
+  color: var(--Gray2);
+  font-family: var(--Roboto);
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 400;
+  letter-spacing: 0.16px;
+  position: relative;
+  display: flex;
+  transition: all 0.3s;
+  &::before {
+    flex-shrink: 0;
+    content: '';
+    display: block;
+    margin-right: 14px;
+    background-image: url("data:image/svg+xml;charset=UTF-8,%3csvg width='16' height='24' viewBox='0 0 16 24' fill='none' xmlns='http://www.w3.org/2000/svg'%3e%3cpath d='M8.00108 24C8.00108 24 22.4865 8.42993 12.4712 1.49458C12.4712 1.49458 18.4589 5.86503 8.00108 18.2209C-2.4585 5.86503 3.52768 1.49458 3.52768 1.49458C-6.48618 8.42993 8.00108 24 8.00108 24Z' fill='%2300AEEF'/%3e%3cpath d='M12.3479 4.25687C12.4529 6.3054 11.4904 9.28003 7.98268 13.502C4.4758 9.28096 3.51375 6.3061 3.61864 4.25687C3.75312 6.49988 5.65588 8.27735 7.98339 8.27735C10.3109 8.27735 12.2138 6.49942 12.3479 4.25687Z' fill='%2300AEEF'/%3e%3cpath d='M7.98366 8.58203C10.3906 8.58203 12.3418 6.66056 12.3418 4.29095C12.3418 1.92134 10.3905 -1.25684e-05 7.98366 -1.27788e-05C5.57683 -1.29892e-05 3.6254 1.92123 3.6254 4.29095C3.6254 6.66067 5.57671 8.58203 7.98366 8.58203ZM7.98366 5.00598C9.17246 5.00598 10.2183 5.60879 10.8234 6.52015C10.158 7.34124 9.13309 7.86677 7.98366 7.86677C6.83422 7.86677 5.80948 7.34124 5.14395 6.52015C5.74902 5.60879 6.79486 5.00598 7.98366 5.00598Z' fill='%2300AEEF'/%3e%3c/svg%3e");
+    background-repeat: no-repeat;
+    width: 17px;
+    height: 25px;
+    background-size: contain;
+  }
+  &:hover,
+  &:active,
+  &:focus {
+    color: var(--White);
+  }
+}

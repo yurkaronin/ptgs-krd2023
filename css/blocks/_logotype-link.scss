@@ -1,0 +1,16 @@
+.logotype-link {
+  display: flex;
+  justify-content: center;
+  svg {
+    max-width: 170px;
+    flex-shrink: 0;
+  }
+  .color-el {
+    transition: all 0.3s;
+  }
+  &:hover {
+    .color-el {
+      fill: var(--LightBlue);
+    }
+  }
+}

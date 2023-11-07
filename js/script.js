@@ -1,5 +1,3 @@
-console.log('Файл подключён!');
-
 // прилипающая шапка
 let lastKnownScrollY = 0;
 let ticking = false;
@@ -101,8 +99,30 @@ document.addEventListener("DOMContentLoaded", () => {
   }
 
 
+  // Получаем все элементы с классом .footer-accordion
+  const accordions = document.querySelectorAll('.footer-accordion');
 
+  // Определяем функцию, которая будет выполняться при клике
+  function toggleAccordion(event) {
+    // Проверяем, является ли элемент, по которому кликнули, или его родитель, элементом с классом .footer-navigation__link
+    let target = event.target;
+    while (target != this) {
+      if (target.matches('.footer-navigation__link')) {
+        // Отменяем действие по умолчанию
+        event.preventDefault();
+        console.log('111');
+        // Добавляем или удаляем активный класс
+        this.classList.toggle('active');
+        break;
+      }
+      target = target.parentNode;
+    }
+  }
 
+  // Добавляем слушателей событий на все .footer-accordion
+  accordions.forEach(function (accordion) {
+    accordion.addEventListener('click', toggleAccordion);
+  });
 
 });
 
