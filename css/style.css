@@ -903,6 +903,9 @@ input[type=radio].visually-hidden {
   .header-search {
     padding: 20px 0;
   }
+  .header-search__title {
+    font-size: 25px;
+  }
   .header-search .button {
     margin-left: 10px;
     padding: 9px;
