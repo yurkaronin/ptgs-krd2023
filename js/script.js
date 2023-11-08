@@ -28,7 +28,7 @@ function requestTick() {
 }
 
 document.addEventListener("DOMContentLoaded", () => {
-  console.log('Загрузка странички завершена!');
+
   headerChange();
   window.addEventListener("scroll", onScroll, { passive: true });
 
@@ -150,6 +150,39 @@ document.addEventListener("DOMContentLoaded", () => {
       document.body.classList.remove('header-search-active');
     });
   }
+
+  // анимация бегущих цифр на базе GSAP JS
+  // Активация ScrollTrigger
+  gsap.registerPlugin(ScrollTrigger);
+
+  // Функция для анимации числа
+  function animateNumber(target, endValue) {
+    let obj = { score: 0 };
+    gsap.to(obj, {
+      score: endValue,
+      duration: 2, // Продолжительность анимации в секундах
+      onUpdate: function () {
+        target.innerText = Math.ceil(obj.score);
+      },
+      ease: "power1.out", // Тип анимации, можно изменить по желанию
+    });
+  }
+
+  // Выбираем все элементы с числами для анимации
+  document.querySelectorAll('.our-projects__items span').forEach((span) => {
+    // Получаем число из текста каждого элемента
+    const endValue = parseInt(span.textContent.replace(/\D/g, ''));
+    // Устанавливаем начальное значение
+    span.textContent = '0';
+
+    // Создаем ScrollTrigger для каждого числа
+    ScrollTrigger.create({
+      trigger: span, // Элемент-триггер для старта анимации
+      start: 'top 80%', // Анимация начнется, когда элемент появится на 80% в области видимости
+      onEnter: () => animateNumber(span, endValue) // Запуск анимации
+    });
+  });
+
 
 
 });
