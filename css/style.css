@@ -927,6 +927,17 @@ input[type=radio].visually-hidden {
   }
 }
 
+.big-button .button {
+  max-width: 100%;
+  width: 100%;
+}
+.big-button .button::before {
+  border-radius: 0;
+}
+.big-button .button__text {
+  flex-grow: initial;
+}
+
 .header {
   transition: all 0.3s;
   position: fixed;

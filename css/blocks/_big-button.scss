@@ -1,0 +1,12 @@
+.big-button {
+  .button {
+    max-width: 100%;
+    width: 100%;
+  }
+  .button::before {
+    border-radius: 0;
+  }
+  .button__text {
+    flex-grow: initial;
+}
+}
