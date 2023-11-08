@@ -120,9 +120,11 @@ document.addEventListener("DOMContentLoaded", () => {
   }
 
   // Добавляем слушателей событий на все .footer-accordion
-  accordions.forEach(function (accordion) {
-    accordion.addEventListener('click', toggleAccordion);
-  });
+  if (document.documentElement.clientWidth <= 767) {
+    accordions.forEach(function (accordion) {
+      accordion.addEventListener('click', toggleAccordion);
+    });
+  };
 
 
   // показ блока поиска в шапке сайта
