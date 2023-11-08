@@ -183,6 +183,84 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   });
 
+  // Подключаем Яндекс карту на сайт
+  if (document.querySelector('.js-map')) {
+    // Массив данных для геометок
+    let places = [
+      {
+        coords: [61.785247, 92.727469],
+        name: 'Место 1',
+        description: 'Краткое описание места 1.',
+        link: '#'
+      },
+      // Добавьте остальные объекты для геометок здесь
+    ];
+
+    function init() {
+      let mapElement = document.querySelector('.js-map');
+      let map = new ymaps.Map(mapElement, {
+        center: places[0].coords,
+        zoom: 4,
+        type: 'yandex#satellite'
+      });
+
+      // Включаем перетаскивание карты
+      map.behaviors.enable('drag');
+
+      // Шаблон балуна без кастомного крестика для закрытия
+      var MyBalloonLayout = ymaps.templateLayoutFactory.createClass(
+        '<div class="balloon">' +
+        '<div class="balloon__inner">' +
+        '<h3 class="balloon__title">$[properties.name]</h3>' +
+        '<p class="balloon__description">$[properties.description]</p>' +
+        '<a href="$[properties.link]" class="balloon__button button">' +
+        '<div class="button__icon">' +
+        '<svg xmlns="http://www.w3.org/2000/svg" width="18" height="10" fill="none">' +
+        '<path stroke="#0066B3" stroke-width="2" d="m12 1 4 4m0 0-4 4m4-4H0"></path>' +
+        '</svg>' +
+        '</div>' +
+        '<span class="button__text">Подробнее</span>' +
+        '</a>' +
+        '</div>' +
+        '</div>', {
+        // Определяем пустой метод build для предотвращения ошибок
+        build: function () {
+          this.constructor.superclass.build.call(this);
+        },
+        // Определяем пустой метод clear для предотвращения ошибок
+        clear: function () {
+          this.constructor.superclass.clear.call(this);
+        }
+      }
+      );
+
+
+      places.forEach(function (place) {
+        let placeMark = new ymaps.Placemark(place.coords, {
+          name: place.name,
+          description: place.description,
+          link: place.link
+        }, {
+          balloonContentLayout: MyBalloonLayout,
+          iconLayout: 'default#image',
+          iconImageHref: './img/map/balun.svg',
+          iconImageSize: [42, 56],
+          iconImageOffset: [-19, -44]
+        });
+
+        map.geoObjects.add(placeMark);
+      });
+
+      // Удаление стандартных элементов управления и отключение прокрутки
+      map.controls.remove('geolocationControl');
+      map.controls.remove('searchControl');
+      map.controls.remove('trafficControl');
+      map.controls.remove('typeSelector');
+      map.behaviors.disable(['scrollZoom']);
+    }
+
+    ymaps.ready(init);
+  };
 
 
 });

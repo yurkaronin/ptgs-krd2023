@@ -130,6 +130,7 @@
   --White: #ffffff;
   --Gray: #E9E9E9;
   --Gray2: #b9bfd5;
+  --Gray3: #6D6E70;
   --Black: #000000;
   --White2: rgba(255, 255, 255, 0.2);
   --DarkBlue: #162A75;
@@ -374,6 +375,10 @@ input[type=radio].visually-hidden {
     font-size: 25px;
     line-height: 1.4;
   }
+}
+
+.text {
+  margin: 0;
 }
 
 .list-reset {
@@ -936,6 +941,58 @@ input[type=radio].visually-hidden {
 }
 .big-button .button__text {
   flex-grow: initial;
+}
+
+.balloon__inner {
+  padding: 20px 20px 10px;
+  background: var(--White);
+}
+.balloon__title {
+  margin: 0;
+  margin-bottom: 7px;
+  color: var(--Blue);
+  font-family: var(--Oswald);
+  font-size: 18px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: 1.4;
+  letter-spacing: 0.9px;
+  text-transform: uppercase;
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+.balloon__title::before {
+  content: "";
+  flex-shrink: 0;
+  display: block;
+  width: 22px;
+  height: 33px;
+  background-image: url("data:image/svg+xml;charset=UTF-8,%3csvg width='21' height='32' viewBox='0 0 21 32' fill='none' xmlns='http://www.w3.org/2000/svg'%3e%3cpath d='M10.501 0C10.501 0 -8.51544 20.7604 4.63264 30.0077C4.63264 30.0077 -3.22805 24.1804 10.501 7.70566C24.2324 24.1804 16.3737 30.0077 16.3737 30.0077C29.5199 20.7604 10.501 0 10.501 0Z' fill='%230066B3'/%3e%3cpath d='M4.79315 24.991C4.6553 22.2596 5.91889 18.2934 10.5238 12.6641C15.1277 18.2921 16.3906 22.2587 16.2529 24.991C16.0764 22.0003 13.5784 19.6303 10.5229 19.6303C7.46733 19.6303 4.96922 22.0009 4.79315 24.991Z' fill='%2300AEEF'/%3e%3cpath d='M10.5222 20.5569C7.36232 20.5569 4.80078 23.1189 4.80078 26.2784C4.80078 29.438 7.36247 31.9998 10.5222 31.9998C13.6818 31.9998 16.2437 29.4381 16.2437 26.2784C16.2437 23.1187 13.682 20.5569 10.5222 20.5569ZM10.5222 25.325C8.9615 25.325 7.58852 24.5213 6.79419 23.3061C7.66774 22.2113 9.01318 21.5106 10.5222 21.5106C12.0311 21.5106 13.3764 22.2113 14.2501 23.3061C13.4558 24.5213 12.0828 25.325 10.5222 25.325Z' fill='%2300AEEF'/%3e%3c/svg%3e ");
+  background-repeat: no-repeat;
+  background-size: contain;
+  margin-right: 11px;
+}
+.balloon__description {
+  margin: 0;
+  color: var(--Gray3);
+  font-family: var(--Roboto);
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 1.5;
+  letter-spacing: 0.16px;
+  margin-bottom: 8px;
+}
+.balloon__button {
+  max-width: 100%;
+  padding: 8px 20px;
+}
+.balloon__button::before {
+  left: 0 !important;
+  top: 0 !important;
+  bottom: 0 !important;
+  right: 0 !important;
 }
 
 .header {
@@ -2260,6 +2317,102 @@ input[type=radio].visually-hidden {
   .our-projects__items span {
     font-size: 40px;
   }
+}
+
+.objects-map {
+  position: relative;
+}
+.objects-map__header {
+  margin-bottom: -90px;
+  position: relative;
+  z-index: 99;
+}
+.objects-map__header-grid {
+  display: grid;
+  gap: 32px;
+  grid-template-columns: repeat(2, 1fr);
+  align-items: flex-start;
+}
+.objects-map__body {
+  position: relative;
+  z-index: 10;
+  height: 888px;
+  width: 100%;
+}
+.objects-map__body::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  width: 100%;
+  height: 100%;
+  display: block;
+  background: linear-gradient(180deg, #162a75 0%, rgba(22, 42, 117, 0) 27%);
+  z-index: 999;
+  pointer-events: none;
+}
+.objects-map__body img {
+  display: block;
+  object-fit: cover;
+  height: 100%;
+  width: 100%;
+  object-position: center;
+  position: absolute;
+  z-index: 0;
+}
+.objects-map .title {
+  margin-top: 24px;
+}
+.objects-map .text {
+  font-family: var(--Oswald);
+  font-size: 24px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 1.33;
+}
+.objects-map .section-label {
+  margin-bottom: -4px;
+}
+.objects-map .js-map {
+  position: relative;
+  z-index: 99;
+  height: 888px;
+  width: 100%;
+}
+@media (max-width: 1439px) {
+  .objects-map__header-grid {
+    grid-template-columns: 1fr;
+    gap: 22px;
+  }
+  .objects-map .title {
+    margin-top: 0;
+  }
+  .objects-map .section-label {
+    margin-bottom: 21px;
+  }
+}
+@media (max-width: 767px) {
+  .objects-map__body {
+    height: 570px;
+  }
+  .objects-map .js-map {
+    height: 570px;
+  }
+  .objects-map .section-label {
+    margin-bottom: 15px;
+  }
+  .objects-map .title {
+    font-size: 25px;
+  }
+  .objects-map .text {
+    font-size: 18px;
+  }
+}
+
+[class*=copyrights-pane] {
+  display: none !important;
 }
 
 .footer {
