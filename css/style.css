@@ -620,7 +620,7 @@ input[type=radio].visually-hidden {
   font-weight: 500;
   letter-spacing: 0.7px;
   text-transform: uppercase;
-  margin-bottom: 16px;
+  margin-bottom: 18px;
   display: flex;
   align-items: center;
   transition: all 0.3s;
@@ -639,6 +639,8 @@ input[type=radio].visually-hidden {
   letter-spacing: 0.16px;
   text-transform: none;
   font-family: var(--Roboto);
+  margin-bottom: 0;
+  margin-top: 29px;
 }
 .footer-navigation__subitem {
   color: var(--White);
@@ -648,7 +650,7 @@ input[type=radio].visually-hidden {
   letter-spacing: 0.16px;
 }
 .footer-navigation__subitem:not(:last-of-type) {
-  margin-bottom: 24px;
+  margin-bottom: 17px;
 }
 @media (max-width: 767px) {
   .footer-navigation {
