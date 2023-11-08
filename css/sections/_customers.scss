@@ -1,4 +1,6 @@
 .customers {
+  padding-top: 85px;
+  padding-bottom: 95px;
   .swiper {
     margin-top: 56px;
   }
@@ -23,5 +25,17 @@
   }
   .swiper-slide--mod2 {
     background-color: var(--Gray);
+  }
+
+  @media (max-width: 1600px) {
+    padding-bottom: 85px;
+  }
+  @media (max-width: 1439px) {
+    padding-top: 80px;
+    // padding-bottom: 85px;
+  }
+  @media (max-width: 767px) {
+    padding-top: 55px;
+    padding-bottom: 60px;
   }
 }

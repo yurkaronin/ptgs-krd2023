@@ -1,3 +1,33 @@
 .main {
   overflow: hidden;
+  position: relative;
+  &::after {
+    content: "";
+    display: block;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 1px;
+    background-color: var(--White2);
+    width: calc(100% - 64px - 64px);
+    margin: 0 auto;
+  }
+
+  @media (max-width: 1439px) {
+    &::after {
+      width: calc(100% - 50px - 50px);
+    }
+  }
+  @media (max-width: 1023px) {
+    &::after {
+      width: calc(100% - 40px - 40px);
+    }
+  }
+  @media (max-width: 767px) {
+    &::after {
+      // width: calc(100% - 20px - 20px);
+      display: none;
+    }
+  }
 }
