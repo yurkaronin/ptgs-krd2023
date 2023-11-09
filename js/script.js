@@ -43,28 +43,30 @@ document.addEventListener("DOMContentLoaded", () => {
 
 
   // Гибридный аккордеон в мобильном меню
-  // Находим все ссылки с классом .js-accordion-link
-  let links = document.querySelectorAll('.js-accordion-link');
+  if (document.documentElement.clientWidth <= 767) {
+    // Находим все ссылки с классом .js-accordion-link
+    let links = document.querySelectorAll('.js-accordion-link');
 
-  // Добавляем слушатель события 'click' для каждой ссылки
-  links.forEach(link => {
-    link.addEventListener('click', function (event) {
-      // Предотвращаем действие по умолчанию (если это обычная ссылка)
-      event.preventDefault();
+    // Добавляем слушатель события 'click' для каждой ссылки
+    links.forEach(link => {
+      link.addEventListener('click', function (event) {
+        // Предотвращаем действие по умолчанию (если это обычная ссылка)
+        event.preventDefault();
 
-      // Получаем родительский элемент
-      let parent = this.parentElement;
+        // Получаем родительский элемент
+        let parent = this.parentElement;
 
-      // Проверяем, есть ли у родителя класс 'active'
-      if (parent.classList.contains('menu-accordion-active')) {
-        // Если класс есть - удаляем его
-        parent.classList.remove('menu-accordion-active');
-      } else {
-        // Если класса нет - добавляем его
-        parent.classList.add('menu-accordion-active');
-      }
+        // Проверяем, есть ли у родителя класс 'active'
+        if (parent.classList.contains('menu-accordion-active')) {
+          // Если класс есть - удаляем его
+          parent.classList.remove('menu-accordion-active');
+        } else {
+          // Если класса нет - добавляем его
+          parent.classList.add('menu-accordion-active');
+        }
+      });
     });
-  });
+  };
 
   if (document.querySelector('.customers .mySwiper')) {
     console.log('Слайдер с логотипами есть!');
@@ -169,7 +171,7 @@ document.addEventListener("DOMContentLoaded", () => {
   }
 
   // Выбираем все элементы с числами для анимации
-  document.querySelectorAll('.our-projects__items span').forEach((span) => {
+  document.querySelectorAll('.our-projects__items .big span').forEach((span) => {
     // Получаем число из текста каждого элемента
     const endValue = parseInt(span.textContent.replace(/\D/g, ''));
     // Устанавливаем начальное значение

@@ -2262,7 +2262,7 @@ input[type=radio].visually-hidden {
   line-height: 1.33;
   letter-spacing: 0.18px;
 }
-.our-projects__items span {
+.our-projects__items .big {
   display: block;
   color: var(--White);
   font-size: 80px;
