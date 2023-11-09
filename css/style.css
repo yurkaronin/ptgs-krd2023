@@ -2120,13 +2120,15 @@ input[type=radio].visually-hidden {
 .customers .swiper {
   margin-top: 56px;
 }
+.customers .swiper-wrapper {
+  max-height: 160px;
+}
 .customers .swiper-slide {
   background-color: var(--White);
   display: flex;
   align-items: center;
   justify-content: center;
   padding: 24px 24px;
-  max-height: 265px;
 }
 .customers .swiper-slide img {
   display: block;

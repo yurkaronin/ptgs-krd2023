@@ -4,13 +4,15 @@
   .swiper {
     margin-top: 56px;
   }
+  .swiper-wrapper {
+    max-height: 160px;
+  }
   .swiper-slide {
     background-color: var(--White);
     display: flex;
     align-items: center;
     justify-content: center;
     padding: 24px 24px;
-    max-height: 265px;
 
     img {
       display: block;
