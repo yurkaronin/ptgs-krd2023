@@ -2126,6 +2126,7 @@ input[type=radio].visually-hidden {
   align-items: center;
   justify-content: center;
   padding: 24px 24px;
+  max-height: 265px;
 }
 .customers .swiper-slide img {
   display: block;
@@ -2135,7 +2136,7 @@ input[type=radio].visually-hidden {
   object-fit: contain;
   flex-shrink: 0;
 }
-.customers .swiper-slide--mod {
+.customers .swiper-slide--mod1 {
   background-color: var(--Black);
 }
 .customers .swiper-slide--mod2 {
