@@ -5,7 +5,7 @@ let ticking = false;
 function headerChange() {
   let scrollTop = window.pageYOffset || document.documentElement.scrollTop;
 
-  if (scrollTop > 10) {
+  if (scrollTop > 160) {
     document.body.classList.add("header-sticky");
   } else {
     document.body.classList.remove("header-sticky");
@@ -173,17 +173,23 @@ document.addEventListener("DOMContentLoaded", () => {
   // Выбираем все элементы с числами для анимации
   document.querySelectorAll('.animate-number').forEach((span) => {
     // Получаем число из текста каждого элемента
-    const endValue = parseInt(span.textContent.replace(/\D/g, ''));
-    // Устанавливаем начальное значение
-    span.textContent = '0';
-
-    // Создаем ScrollTrigger для каждого числа
-    ScrollTrigger.create({
-      trigger: span, // Элемент-триггер для старта анимации
-      start: 'top 80%', // Анимация начнется, когда элемент появится на 80% в области видимости
-      onEnter: () => animateNumber(span, endValue) // Запуск анимации
-    });
+    const numberMatch = span.textContent.match(/\d+/);
+    if (numberMatch) {
+      const endValue = parseInt(numberMatch[0]);
+      // Создаем новый span для числа
+      const numberSpan = document.createElement('span');
+      numberSpan.textContent = '0';
+      // Заменяем число в исходном span на новый span
+      span.innerHTML = span.innerHTML.replace(numberMatch[0], numberSpan.outerHTML);
+      // Создаем ScrollTrigger для каждого числа
+      ScrollTrigger.create({
+        trigger: span, // Элемент-триггер для старта анимации
+        start: 'top 80%', // Анимация начнется, когда элемент появится на 80% в области видимости
+        onEnter: () => animateNumber(span.querySelector('span'), endValue) // Запуск анимации
+      });
+    }
   });
+
 
   // Подключаем Яндекс карту на сайт
   if (document.querySelector('.js-map')) {
