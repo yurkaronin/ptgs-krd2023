@@ -1742,6 +1742,9 @@ input[type=radio].visually-hidden {
   transition: all 0.3s ease-in-out;
   border-radius: 4px 4px;
   overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
 }
 .advantages__photo {
   display: block;
@@ -1755,6 +1758,7 @@ input[type=radio].visually-hidden {
   background-color: var(--LightBlue);
   color: var(--White);
   position: relative;
+  flex-grow: 2;
 }
 .advantages__icon {
   width: 80px;

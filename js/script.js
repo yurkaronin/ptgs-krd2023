@@ -171,7 +171,7 @@ document.addEventListener("DOMContentLoaded", () => {
   }
 
   // Выбираем все элементы с числами для анимации
-  document.querySelectorAll('.our-projects__items .big span').forEach((span) => {
+  document.querySelectorAll('.animate-number').forEach((span) => {
     // Получаем число из текста каждого элемента
     const endValue = parseInt(span.textContent.replace(/\D/g, ''));
     // Устанавливаем начальное значение
