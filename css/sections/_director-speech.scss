@@ -12,7 +12,8 @@
     height: 100%;
     display: block;
     // background: linear-gradient(180deg, #162a75 0%, rgba(22, 42, 117, 0) 63.8%);
-    background: linear-gradient(270deg, #162A75 0%, rgba(22, 42, 117, 0.00) 100%), linear-gradient(180deg, #162A75 0%, rgba(22, 42, 117, 0.00) 100%);
+    background: linear-gradient(270deg, #162a75 0%, rgba(22, 42, 117, 0) 100%),
+      linear-gradient(180deg, #162a75 0%, rgba(22, 42, 117, 0) 100%);
     z-index: 2;
   }
   &__image-bg {
@@ -34,7 +35,6 @@
       height: 100%;
       object-fit: cover;
       object-position: bottom;
-
     }
   }
   &__grid {
@@ -45,9 +45,10 @@
     grid-template-columns: repeat(2, 1fr);
   }
   &__photo {
-    // margin-top: -128px;
     img {
       display: block;
+      max-height: 735px;
+      object-fit: contain;
     }
   }
   &__right {
@@ -73,7 +74,6 @@
     font-style: normal;
     font-weight: 400;
     letter-spacing: 0.18px;
-
   }
   .section-label {
     margin-top: 0;
@@ -92,6 +92,39 @@
     &__right {
       margin-top: 0;
       max-width: 100%;
+    }
+  }
+  @media (max-width: 1279px) {
+    &__grid {
+      align-items: flex-end;
+    }
+    &__text {
+      margin-bottom: 40px;
+    }
+    &__photo img {
+      max-height: 540px;
+    }
+  }
+  @media (max-width: 1023px) {
+    &__grid {
+      display: flex;
+      flex-direction: column-reverse;
+      align-items: center;
+    }
+    &__text {
+      margin-bottom: 0;
+    }
+    .section-label::before {
+      left: -100%;
+    }
+
+  }
+  @media (max-width: 767px) {
+    &__name {
+      font-size: 25px;
+    }
+    &__text {
+      font-size: 16px;
     }
   }
 }

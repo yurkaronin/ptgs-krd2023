@@ -5,4 +5,16 @@
   display: grid;
   gap: 32px;
   grid-template-columns: repeat(2, 1fr);
+  &__link {
+    display: block;
+  }
+  &__image {
+    display: block;
+    object-fit: contain;
+  }
+
+  @media (max-width: 767px) {
+    gap: 16px;
+
+  }
 }
