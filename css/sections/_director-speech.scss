@@ -76,8 +76,22 @@
 
   }
   .section-label {
+    margin-top: 0;
     &::before {
       left: 100%;
+    }
+  }
+
+  @media (max-width: 1600px) {
+    &__name {
+      font-size: 40px;
+    }
+    &__grid {
+      align-items: center;
+    }
+    &__right {
+      margin-top: 0;
+      max-width: 100%;
     }
   }
 }

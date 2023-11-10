@@ -1892,6 +1892,14 @@ input[type=radio].visually-hidden {
   .advantages__grid-left {
     grid-column: 1/13;
   }
+  .advantages__mod .advantages__grid-left {
+    grid-column: 1/6;
+  }
+  .advantages__grid-right-two {
+    grid-column: 7/13;
+    grid-row-start: 2;
+    grid-row-end: 4;
+  }
 }
 @media (max-width: 1023px) {
   .advantages__grid {
@@ -2116,6 +2124,9 @@ input[type=radio].visually-hidden {
   .work-direction__item-details {
     padding: 16px 20px 20px;
   }
+  .work-direction__name::after {
+    left: -20px;
+  }
 }
 
 .customers {
@@ -2267,7 +2278,7 @@ input[type=radio].visually-hidden {
   line-height: 1.33;
   letter-spacing: 0.18px;
 }
-.our-projects__items .animate-number {
+.our-projects .animate-number {
   display: block;
   color: var(--White);
   font-size: 80px;
@@ -2300,7 +2311,7 @@ input[type=radio].visually-hidden {
   .our-projects__title::after {
     width: 60%;
   }
-  .our-projects__items span {
+  .our-projects .animate-number {
     font-size: 56px;
   }
 }
@@ -2310,10 +2321,14 @@ input[type=radio].visually-hidden {
     padding-bottom: 60px;
     min-height: 435px;
   }
+  .our-projects::after {
+    background: linear-gradient(100deg, rgb(22, 42, 117) 0%, rgba(22, 42, 117, 0) 100%);
+  }
   .our-projects__list {
     gap: 13px 15px;
   }
   .our-projects__title {
+    font-size: 25px;
     margin-bottom: 25px;
   }
   .our-projects__title::after {
@@ -2322,7 +2337,7 @@ input[type=radio].visually-hidden {
   .our-projects__items {
     font-size: 16px;
   }
-  .our-projects__items span {
+  .our-projects .animate-number {
     font-size: 40px;
   }
 }
@@ -2494,8 +2509,23 @@ input[type=radio].visually-hidden {
   font-weight: 400;
   letter-spacing: 0.18px;
 }
+.director-speech .section-label {
+  margin-top: 0;
+}
 .director-speech .section-label::before {
   left: 100%;
+}
+@media (max-width: 1600px) {
+  .director-speech__name {
+    font-size: 40px;
+  }
+  .director-speech__grid {
+    align-items: center;
+  }
+  .director-speech__right {
+    margin-top: 0;
+    max-width: 100%;
+  }
 }
 
 .projects-group {

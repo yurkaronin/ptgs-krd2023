@@ -190,5 +190,8 @@
     &__item-details {
       padding: 16px 20px 20px;
     }
+    &__name::after {
+      left: -20px;
+    }
   }
 }
