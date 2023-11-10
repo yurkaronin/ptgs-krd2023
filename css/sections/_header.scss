@@ -178,5 +178,11 @@
         text-transform: uppercase;
       }
     }
+    .logotype-link__scroll {
+      display: none !important;
+    }
+    .logotype-link__desc {
+      display: block !important;
+    }
   }
 }

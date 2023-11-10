@@ -255,6 +255,11 @@ input[type=radio].visually-hidden {
   }
 }
 
+.container {
+  max-width: 1488px;
+  margin-inline: auto;
+}
+
 .button {
   text-decoration: none;
   cursor: pointer;
@@ -1206,6 +1211,12 @@ input[type=radio].visually-hidden {
     font-weight: 700;
     letter-spacing: 1px;
     text-transform: uppercase;
+  }
+  .header .logotype-link__scroll {
+    display: none !important;
+  }
+  .header .logotype-link__desc {
+    display: block !important;
   }
 }
 
@@ -2703,6 +2714,82 @@ input[type=radio].visually-hidden {
   }
 }
 
+.content-one {
+  padding-top: 70px;
+  padding-bottom: 80px;
+  font-family: var(--Roboto);
+  font-size: 18px;
+}
+.content-one__columns-2 {
+  columns: 2;
+  column-gap: 32px;
+}
+.content-one h1,
+.content-one h2,
+.content-one h3,
+.content-one h4,
+.content-one h5,
+.content-one h6 {
+  font-family: var(--Oswald);
+  font-size: 24px;
+  line-height: 1.55;
+  font-weight: 400;
+  opacity: 1;
+}
+.content-one h1:first-of-type,
+.content-one h2:first-of-type,
+.content-one h3:first-of-type,
+.content-one h4:first-of-type,
+.content-one h5:first-of-type,
+.content-one h6:first-of-type {
+  margin-top: 0;
+}
+.content-one p {
+  opacity: 0.8;
+}
+.content-one img {
+  margin-top: 43px;
+  border-radius: 4px;
+  overflow: hidden;
+  display: block;
+}
+.content-one img + * {
+  margin-top: 43px;
+}
+.content-one ul,
+.content-one ol {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+.content-one ul li,
+.content-one ol li {
+  margin-bottom: 24px;
+  position: relative;
+  padding-left: 32px;
+  opacity: 0.8;
+}
+.content-one ul li::before,
+.content-one ol li::before {
+  content: "";
+  display: block;
+  width: 16px;
+  height: 2px;
+  background-color: var(--LightBlue);
+  top: 10px;
+  position: absolute;
+  left: 0;
+}
+.content-one .button {
+  margin-right: 0;
+  margin-left: auto;
+}
+@media (max-width: 1279px) {
+  .content-one__columns-2 {
+    columns: initial;
+  }
+}
+
 .footer {
   padding-top: 67px;
   padding-bottom: 40px;
@@ -2827,6 +2914,12 @@ input[type=radio].visually-hidden {
 }
 .header-sticky .logotype-link__desc {
   display: none;
+}
+@media (max-width: 1279px) {
+  .header-sticky .header__flex {
+    padding-top: 12px;
+    padding-bottom: 12px;
+  }
 }
 
 .header-search-active .header-search {
