@@ -1,0 +1,7 @@
+.management-list {
+  padding: 80px 0 90px;
+  @media (max-width: 1023px) {
+    padding-top: 0;
+    padding-bottom: 60px;
+  }
+}

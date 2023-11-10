@@ -2132,9 +2132,44 @@ input[type=radio].visually-hidden {
 .work-direction .button span {
   text-align: left;
 }
+.work-direction__photo-wrapper {
+  display: flex;
+  width: 100%;
+  height: 272px;
+  position: relative;
+  justify-content: center;
+}
+.work-direction__photo-bg {
+  border-radius: 4px 4px 0px 0px;
+  overflow: hidden;
+  width: 100%;
+  height: 100%;
+  background-image: url(../img/management-list/bg.jpg);
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+.work-direction__photo {
+  display: block;
+  height: 376px;
+  object-fit: contain;
+  flex-shrink: 0;
+  position: absolute;
+  bottom: 0;
+}
+.work-direction__list--mod2 {
+  gap: 136px 32px;
+}
+.work-direction__list--mod2 .work-direction__item-details {
+  padding-top: 40px;
+  padding-bottom: 24px;
+  border-bottom: 1px solid #455591;
+}
 @media (max-width: 1600px) {
   .work-direction__list {
     grid-template-columns: repeat(3, 1fr);
+  }
+  .work-direction__list--mod2 {
+    gap: 144px 32px;
   }
 }
 @media (max-width: 1279px) {
@@ -2149,6 +2184,9 @@ input[type=radio].visually-hidden {
   }
 }
 @media (max-width: 1023px) {
+  .work-direction__list--mod2 {
+    gap: 96px 32px;
+  }
   .work-direction__image {
     height: 216px;
   }
@@ -2166,6 +2204,12 @@ input[type=radio].visually-hidden {
   .work-direction__name::after {
     left: -24px;
   }
+  .work-direction__photo-wrapper {
+    height: 216px;
+  }
+  .work-direction__photo {
+    height: 280px;
+  }
 }
 @media (max-width: 767px) {
   .work-direction__list {
@@ -2176,6 +2220,15 @@ input[type=radio].visually-hidden {
   }
   .work-direction__name::after {
     left: -20px;
+  }
+  .work-direction__list--mod2 {
+    gap: 60px 32px;
+  }
+  .work-direction__photo-wrapper {
+    height: 220px;
+  }
+  .work-direction__photo {
+    height: 260px;
   }
 }
 
@@ -2618,6 +2671,16 @@ input[type=radio].visually-hidden {
 @media (max-width: 1279px) {
   .projects-group {
     padding-top: 70px;
+  }
+}
+
+.management-list {
+  padding: 80px 0 90px;
+}
+@media (max-width: 1023px) {
+  .management-list {
+    padding-top: 0;
+    padding-bottom: 60px;
   }
 }
 
