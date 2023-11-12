@@ -59,6 +59,9 @@
     height: 888px;
     width: 100%;
   }
+  .content-one {
+    padding: 0;
+  }
 
   @media (max-width: 1439px) {
     &__header-grid {
