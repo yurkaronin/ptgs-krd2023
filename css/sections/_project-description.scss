@@ -1,0 +1,36 @@
+.project-description {
+  padding: 70px 0 60px;
+  &__grid {
+    display: grid;
+    gap: 32px;
+    grid-template-columns: repeat(2, 1fr);
+    align-items: flex-start;
+  }
+  &__map {
+    position: relative;
+    img {
+      display: block;
+    object-fit: cover;
+    height: 100%;
+    width: 100%;
+    object-position: center;
+    position: absolute;
+    z-index: 0;
+    }
+    .custom-map {
+      position: relative;
+      z-index: 99;
+      height: 560px;
+      width: 100%;
+    }
+  }
+  .content {
+    padding: 0;
+  }
+
+  @media (max-width: 1279px) {
+    &__grid {
+      grid-template-columns: repeat(1, 1fr);
+    }
+  }
+}

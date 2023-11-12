@@ -1,4 +1,5 @@
-.content-one {
+.content-one,
+.content {
   padding-top: 70px;
   padding-bottom: 80px;
   font-family: var(--Roboto);
@@ -8,12 +9,12 @@
     columns: 2;
     column-gap: 32px;
   }
-  h1,
-  h2,
-  h3,
-  h4,
-  h5,
-  h6 {
+  h1:not([class]),
+  h2:not([class]),
+  h3:not([class]),
+  h4:not([class]),
+  h5:not([class]),
+  h6:not([class]) {
     font-family: var(--Oswald);
     font-size: 24px;
     line-height: 1.55;
@@ -24,10 +25,10 @@
       margin-top: 0;
     }
   }
-  p {
+  p:not([class]) {
     opacity: 0.8;
   }
-  img {
+  img:not([class]) {
     margin-top: 43px;
     border-radius: 4px;
     overflow: hidden;
@@ -36,8 +37,8 @@
       margin-top: 43px;
     }
   }
-  ul,
-  ol {
+  ul:not([class]),
+  ol:not([class]) {
     list-style: none;
     padding: 0;
     margin: 0;
