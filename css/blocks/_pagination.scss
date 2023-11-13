@@ -63,5 +63,21 @@
     display: flex;
     align-items: center;
     justify-content: center;
+    &--hide {
+      display: none;
+    }
+  }
+
+  @media (max-width:767px) {
+    &__list {
+      max-width: max-content;
+      margin-left: auto;
+      margin-right: auto;
+    }
+    .dotted {
+      &--hide {
+        display: flex;
+      }
+    }
   }
 }
