@@ -29,13 +29,15 @@
     opacity: 0.8;
   }
   img:not([class]) {
-    margin-top: 43px;
     border-radius: 4px;
     overflow: hidden;
     display: block;
     & + * {
       margin-top: 43px;
     }
+  }
+  * + img:not([class]) {
+    margin-top: 43px;
   }
   ul:not([class]),
   ol:not([class]) {

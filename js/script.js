@@ -67,8 +67,8 @@ document.addEventListener("DOMContentLoaded", () => {
       });
     });
   };
-
-  if (document.querySelector('.customers .mySwiper')) {
+  // слайдер с логотипами
+  if (document.querySelector('.photo-slider .mySwiper')) {
     console.log('Слайдер с логотипами есть!');
     var swiperCustomers = new Swiper(".customers .mySwiper", {
       // slidesPerView: 6,
@@ -95,6 +95,38 @@ document.addEventListener("DOMContentLoaded", () => {
         // when window width is >= 640px
         1600: {
           slidesPerView: 6
+        }
+      }
+    });
+  }
+  // слайдер с фото
+  if (document.querySelector('.photo-slider .mySwiper')) {
+    console.log('Слайдер с фотографиями есть!');
+    var swiperPhotoSlider = new Swiper(".photo-slider .mySwiper", {
+      // slidesPerView: 6,
+      spaceBetween: 32,
+      navigation: {
+        nextEl: ".photo-slider .swiper-button-next",
+        prevEl: ".photo-slider .swiper-button-prev",
+      },
+      breakpoints: {
+        // when window width is >= 320px
+        425: {
+          slidesPerView: 2
+        },
+        // when window width is >= 480px
+        767: {
+          slidesPerView: 2
+        },
+        1023: {
+          slidesPerView: 2
+        },
+        1279: {
+          slidesPerView: 2
+        },
+        // when window width is >= 640px
+        1600: {
+          slidesPerView: 2
         }
       }
     });
