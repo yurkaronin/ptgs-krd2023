@@ -68,7 +68,7 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   };
   // слайдер с логотипами
-  if (document.querySelector('.photo-slider .mySwiper')) {
+  if (document.querySelector('.customers .mySwiper')) {
     console.log('Слайдер с логотипами есть!');
     var swiperCustomers = new Swiper(".customers .mySwiper", {
       // slidesPerView: 6,
@@ -289,8 +289,6 @@ document.addEventListener("DOMContentLoaded", () => {
   var MyBalloonLayout = ymaps.templateLayoutFactory.createClass(
     // ваш код шаблона балуна...
   );
-
-
 
 });
 

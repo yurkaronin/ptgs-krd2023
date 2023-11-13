@@ -59,7 +59,11 @@
       max-height: 1120px;
       margin: 0 !important;
     }
+    &--mod1 {
+      background-color: var(--Black);
+    }
+    &--mod2 {
+      background-color: var(--Gray);
+    }
   }
 }
-
-
