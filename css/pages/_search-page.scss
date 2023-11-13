@@ -1,0 +1,15 @@
+.search-page {
+
+  .home-screen__flex {
+    min-height: initial;
+    padding-bottom: 60px;
+  }
+  .home-screen .title+* {
+    margin-top: 74px;
+}
+@media (max-width: 767px) {
+  .home-screen__flex {
+    padding-bottom: 20px;
+  }
+}
+}

@@ -28,6 +28,8 @@
 @import "blocks/big-button";
 @import "blocks/balloon";
 @import "blocks/project-details";
+@import "blocks/search-result";
+@import "blocks/pagination";
 
 @import "sections/header";
 
@@ -49,6 +51,9 @@
 @import "sections/photo-slider";
 
 @import "sections/footer";
+
+
+@import "pages/search-page";
 
 @import "activity/scroll";
 @import "activity/menu-accordion-active";
