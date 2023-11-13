@@ -189,9 +189,6 @@
     }
   }
 
-  &--mod {
-  }
-
   @media (max-width: 1600px) {
     &__list {
       display: flex;
@@ -212,7 +209,7 @@
     &__grid-right {
       grid-column: 1/13;
       order: -1;
-      margin-bottom: 72px;
+      margin-bottom: 45px;
     }
     &__grid-left {
       grid-column: 1/13;
@@ -261,6 +258,7 @@
     }
     &__grid-right {
       margin-top: calc(-150px + -88px);
+      margin-bottom: 23px;
     }
     &__list {
       margin-left: -50px;
@@ -298,5 +296,8 @@
     &__content {
       margin-top: 0;
     }
+    .animate-number {
+      font-size: 55px;
+  }
   }
 }
