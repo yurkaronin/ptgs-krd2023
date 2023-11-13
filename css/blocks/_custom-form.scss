@@ -1,0 +1,132 @@
+.custom-form {
+  &__grid {
+    display: grid;
+    gap: 32px;
+    grid-template-columns: repeat(2, 1fr);
+    margin-bottom: 36px;
+  }
+  &__input {
+    padding: 3px; /* уменьшен до 3px, чтобы компенсировать увеличение границы */
+    border-radius: 4px;
+    border: 1px solid var(--White2); /* начальное состояние границы */
+    flex-grow: 2;
+    max-width: 100%;
+    width: 100%;
+    // transition: all 0.3s;
+
+    &:hover {
+      border: 1px solid var(--LightBlue);
+    }
+    &:has(input:active),
+    &:has(input:focus),
+    &:has(textarea:active),
+    &:has(textarea:focus) {
+      border: 4px solid var(--LightBlue);
+      padding: 0; /* убираем отступ, когда граница увеличивается */
+    }
+  }
+
+  &__item {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+  }
+  &__label {
+    margin-bottom: 12px;
+    display: block;
+  }
+  &__footer {
+    display: flex;
+    align-items: center;
+  }
+  &__check {
+    flex-grow: 2;
+    display: flex;
+    align-items: center;
+    position: relative;
+
+    label {
+      flex-grow: 2;
+      max-width: 100%;
+      margin: 0;
+      position: relative;
+      padding-left: 32px;
+    }
+
+    input[type="checkbox"] + label::before {
+      position: absolute;
+      left: 0;
+      top: 3px;
+      width: 24px;
+      height: 24px;
+      content: "";
+      background-repeat: no-repeat;
+      background-size: contain;
+    }
+
+    input[type="checkbox"] + label::before {
+      background-image: url(../img/icons/checkbox-off.svg);
+    }
+
+    input[type="checkbox"]:checked + label::before {
+      background-image: url(../img/icons/checkbox-on.svg);
+    }
+    a {
+      color: var(--LightBlue);
+      text-decoration: underline;
+    }
+  }
+  .button {
+    margin-left: auto;
+  }
+
+  input {
+    border-radius: 2px;
+    background: var(--White);
+    max-width: 100%;
+    width: 100%;
+    outline: none;
+    border: none;
+    padding: 11px 20px;
+    color: var(--Black);
+    font-family: var(--Roboto);
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 400;
+    letter-spacing: 0.16px;
+    display: block;
+    transition: all 0.3s;
+  }
+  textarea {
+    max-width: 100%;
+    width: 100%;
+    border-radius: 2px;
+    background: var(--White);
+    max-width: 100%;
+    width: 100%;
+    outline: none;
+    border: none;
+    padding: 11px 20px;
+    color: var(--Black);
+    font-family: var(--Roboto);
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 400;
+    letter-spacing: 0.16px;
+    display: block;
+    resize: none;
+  }
+
+  @media (max-width: 767px) {
+    &__grid {
+      grid-template-columns: repeat(1, 1fr);
+    }
+    &__footer {
+      flex-direction: column;
+
+      .button {
+        margin-top: 25px;
+      }
+  }
+  }
+}

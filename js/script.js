@@ -225,7 +225,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
   // Подключаем Яндекс карту на сайт
   ymaps.ready(function () {
-    initMap('.js-map', [61.785247, 92.727469], 4, [
+    initMap('.js-map', [61.785247, 92.727469], 3, [
       // Массив данных для геометок большой карты
       {
         coords: [61.785247, 92.727469],
@@ -233,15 +233,28 @@ document.addEventListener("DOMContentLoaded", () => {
         description: 'Краткое описание места 1.',
         link: '#'
       },
+      // Дополнительные метки для большой карты
+      {
+        coords: [55.755814, 37.617635],
+        name: 'Место 2',
+        description: 'Краткое описание места 2.',
+        link: '#'
+      },
+      {
+        coords: [59.934280, 30.335099],
+        name: 'Место 3',
+        description: 'Краткое описание места 3.',
+        link: '#'
+      }
       // Добавьте остальные объекты для геометок здесь
     ]);
 
-    initMap('.js-map-2', [55.751574, 37.573856], 5, [
+    initMap('.js-map-2', [55.751574, 37.573856], 3, [
       // Массив данных для геометки маленькой карты
       {
         coords: [55.751574, 37.573856],
-        name: 'Место 2',
-        description: 'Краткое описание места 2.',
+        name: 'Уникальное Место',
+        description: 'Описание для уникального места.',
         link: '#'
       }
     ]);
@@ -258,6 +271,33 @@ document.addEventListener("DOMContentLoaded", () => {
 
       // Включаем перетаскивание карты
       map.behaviors.enable('drag');
+
+      // Создаем шаблон балуна
+      var MyBalloonLayout = ymaps.templateLayoutFactory.createClass(
+        '<div class="balloon">' +
+        '<div class="balloon__inner">' +
+        '<h3 class="balloon__title">$[properties.name]</h3>' +
+        '<p class="balloon__description">$[properties.description]</p>' +
+        '<a href="$[properties.link]" class="balloon__button button">' +
+        '<div class="button__icon">' +
+        '<svg xmlns="http://www.w3.org/2000/svg" width="18" height="10" fill="none">' +
+        '<path stroke="#0066B3" stroke-width="2" d="m12 1 4 4m0 0-4 4m4-4H0"></path>' +
+        '</svg>' +
+        '</div>' +
+        '<span class="button__text">Подробнее</span>' +
+        '</a>' +
+        '</div>' +
+        '</div>', {
+        // Определяем пустой метод build для предотвращения ошибок
+        build: function () {
+          this.constructor.superclass.build.call(this);
+        },
+        // Определяем пустой метод clear для предотвращения ошибок
+        clear: function () {
+          this.constructor.superclass.clear.call(this);
+        }
+      }
+      );
 
       // Добавляем метки на карту
       places.forEach(function (place) {
@@ -285,10 +325,6 @@ document.addEventListener("DOMContentLoaded", () => {
     }
   }
 
-  // Шаблон балуна (можно оставить вне функции initMap)
-  var MyBalloonLayout = ymaps.templateLayoutFactory.createClass(
-    // ваш код шаблона балуна...
-  );
 
 });
 

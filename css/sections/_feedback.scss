@@ -1,0 +1,30 @@
+.feedback {
+  padding-bottom: 90px;
+  &__grid {
+    display: grid;
+    gap: 32px;
+    grid-template-columns: repeat(2, 1fr);
+  }
+  .title {
+    max-width: 730px;
+  }
+  .custom-form {
+    margin-top: 65px;
+  }
+  @media (max-width: 1600px) {
+    &__grid {
+      grid-template-columns: 1fr 2fr;
+    }
+  }
+  @media (max-width: 1279px) {
+    &__grid {
+      grid-template-columns: 1fr;
+    }
+    .custom-form {
+      margin-top: 0;
+    }
+    .title {
+      max-width: 100%;
+    }
+  }
+}

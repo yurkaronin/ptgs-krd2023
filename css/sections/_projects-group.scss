@@ -1,5 +1,8 @@
 .projects-group {
   padding-top: 88px;
+  &--mod {
+    padding-top: 0;
+  }
 
   @media (max-width: 1279px) {
     padding-top: 70px;

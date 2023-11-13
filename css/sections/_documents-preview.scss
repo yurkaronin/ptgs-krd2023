@@ -56,10 +56,13 @@
     &__list {
       grid-template-columns: repeat(3, 1fr);
     }
+    &--mod &__list {
+      margin-top: -145px;
+     }
   }
   @media (max-width: 767px) {
    &--mod &__list {
-    margin-top: -117px;
+    margin-top: -120px;
    }
     &__list {
       grid-template-columns: repeat(2, 1fr);
