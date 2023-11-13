@@ -30,10 +30,30 @@
       border: 1px solid #455591;
     }
   }
-  &__item::before {
-    content: counter(item-number) " "; /* Добавляем номер из счетчика и пробел после него */
-    counter-increment: item-number; /* Увеличиваем счетчик */
-    /* Стили для кружка */
+  // &__item::before {
+  //   content: counter(item-number) " "; /* Добавляем номер из счетчика и пробел после него */
+  //   counter-increment: item-number; /* Увеличиваем счетчик */
+  //   /* Стили для кружка */
+  //   width: 48px;
+  //   height: 48px;
+  //   line-height: 1;
+  //   border-radius: 50%;
+  //   background-color: var(--LightBlue);
+  //   color: var(--White);
+  //   font-family: var(--Oswald);
+  //   font-size: 14px;
+  //   font-weight: 600;
+  //   text-align: center;
+  //   margin-right: 16px;
+  //   position: relative;
+  //   z-index: 2;
+
+  //   display: flex;
+  //   align-items: center;
+  //   justify-content: center;
+  //   flex-shrink: 0;
+  // }
+  &__item-number {
     width: 48px;
     height: 48px;
     line-height: 1;
@@ -54,13 +74,13 @@
     flex-shrink: 0;
   }
   &__container {
-    max-width: 1488px;
+    max-width: 1425px;
     margin-left: auto;
     position: relative;
     z-index: 2;
   }
   &__title {
-    color: var(--White);
+    color: var(--LightBlue);
     font-family: var(--Oswald);
     font-size: 24px;
     font-style: normal;
@@ -71,11 +91,11 @@
     border-bottom: 1px solid transparent; /* Прозрачное подчёркивание для начального состояния */
     transition: border-bottom 0.3s ease-in-out; /* Добавляем плавное изменение */
 
-    span {
-      color: var(--LightBlue);
+    b {
+      color: var(--White);
     }
     &:hover {
-      border-bottom: 1px solid var(--White); /* Белое подчёркивание */
+      border-bottom: 1px solid var(--LightBlue); /* Белое подчёркивание */
     }
   }
   &__text {
@@ -89,6 +109,9 @@
     letter-spacing: 0.16px;
     margin-bottom: 16px;
     margin-top: 16px;
+    b {
+      color: var(--White);
+    }
   }
   &__item:hover,
   &__item:focus,
@@ -112,13 +135,20 @@
     &__title {
       font-size: 18px;
     }
-    &__item::before {
+    &__item-number {
       width: 40px;
       height: 40px;
       position: absolute;
       margin: 0;
       top: -24px;
     }
+    // &__item::before {
+    //   width: 40px;
+    //   height: 40px;
+    //   position: absolute;
+    //   margin: 0;
+    //   top: -24px;
+    // }
     &__item {
       padding: 24px 20px;
       margin-bottom: 25px;
