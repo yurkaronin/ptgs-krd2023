@@ -14,7 +14,6 @@
     display: block;
     img {
       display: block;
-      height: 100%;
       width: 100%;
       object-fit: contain;
       max-width: 100%;
@@ -51,6 +50,26 @@
   @media (max-width: 1600px) {
     &__list {
       grid-template-columns: repeat(4, 1fr);
+    }
+  }
+  @media (max-width: 1023px) {
+    &__list {
+      grid-template-columns: repeat(3, 1fr);
+    }
+  }
+  @media (max-width: 767px) {
+   &--mod &__list {
+    margin-top: -117px;
+   }
+    &__list {
+      grid-template-columns: repeat(2, 1fr);
+      gap: 20px 15px;
+    }
+    .work-direction__name {
+      font-size: 14px;
+      &::before {
+        display: none;
+      }
     }
   }
 }
