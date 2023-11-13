@@ -8,9 +8,9 @@
     max-width: max-content;
     margin-left: auto;
     flex-wrap: wrap;
-    li:not(:last-of-type) {
-      margin-right: 16px;
-    }
+  }
+  li:not(:last-of-type) &__link {
+    margin-right: 16px;
   }
   &__link {
     border-radius: 50%;
@@ -78,6 +78,13 @@
       &--hide {
         display: flex;
       }
+    }
+    &__link {
+      display: none;
+    }
+    &__link.active,
+    &__link.show {
+      display: flex;
     }
   }
 }
