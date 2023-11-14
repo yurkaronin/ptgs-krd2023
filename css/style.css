@@ -2985,6 +2985,7 @@ li:not(:last-of-type) .pagination__link {
   width: initial;
   grid-template-columns: repeat(3, 1fr);
   margin-bottom: 0;
+  gap: 45px 110px;
 }
 .our-projects--mod .animate-number {
   margin-bottom: 8px;
@@ -3005,6 +3006,9 @@ li:not(:last-of-type) .pagination__link {
   .our-projects__list {
     gap: 40px 32px;
   }
+  .our-projects--mod .our-projects__list {
+    gap: 45px 32px;
+  }
 }
 @media (max-width: 1279px) {
   .our-projects {
@@ -3015,6 +3019,9 @@ li:not(:last-of-type) .pagination__link {
   }
   .our-projects__title {
     padding-bottom: 36px;
+  }
+  .our-projects--mod .our-projects__list {
+    gap: 32px;
   }
 }
 @media (max-width: 1023px) {
@@ -3058,6 +3065,12 @@ li:not(:last-of-type) .pagination__link {
   .our-projects--mod .our-projects__list {
     grid-template-columns: repeat(1, 1fr);
     gap: 17px;
+  }
+  .our-projects--mod .our-projects__list {
+    gap: 26px;
+  }
+  .our-projects--mod .our-projects .animate-number {
+    font-size: 56px;
   }
 }
 
@@ -3466,6 +3479,8 @@ li:not(:last-of-type) .pagination__link {
 }
 
 .photo-slider .swiper-slide img {
+  border-radius: 4px;
+  overflow: hidden;
   width: 100%;
   max-width: 100%;
   display: block;

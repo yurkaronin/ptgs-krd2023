@@ -1,5 +1,7 @@
 .photo-slider {
   .swiper-slide img {
+    border-radius: 4px;
+    overflow: hidden;
     width: 100%;
     max-width: 100%;
     display: block;

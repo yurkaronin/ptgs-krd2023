@@ -120,6 +120,7 @@
       width: initial;
       grid-template-columns: repeat(3, 1fr);
       margin-bottom: 0;
+      gap: 45px 110px;
     }
     .animate-number {
       margin-bottom: 8px;
@@ -140,6 +141,9 @@
     &__list {
       gap: 40px 32px;
     }
+    &--mod .our-projects__list {
+      gap: 45px 32px;
+    }
   }
 
   @media (max-width: 1279px) {
@@ -149,7 +153,10 @@
     }
     &__title {
       padding-bottom: 36px;
-  }
+    }
+    &--mod .our-projects__list {
+      gap: 32px;
+    }
   }
 
   @media (max-width: 1023px) {
@@ -193,5 +200,12 @@
       grid-template-columns: repeat(1, 1fr);
       gap: 17px;
     }
+    &--mod .our-projects__list {
+      gap: 26px;
+    }
+    &--mod .our-projects .animate-number {
+      font-size: 56px;
+    }
+
   }
 }
