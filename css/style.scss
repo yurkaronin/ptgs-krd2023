@@ -98,3 +98,11 @@
     }
   }
 }
+
+.about-page {
+  @media (max-width: 1279px) {
+    .advantages {
+      padding-bottom: 115px;
+    }
+  }
+}

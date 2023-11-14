@@ -25,7 +25,6 @@
     <div class="wrapper">
       <div class="header__flex">
 
-
         <a class="header__logo logotype-link" href="./index.html">
           <svg class="logotype-link__desc" viewBox="0 0 171 83" fill="none" xmlns="http://www.w3.org/2000/svg">
             <path
@@ -269,7 +268,7 @@
           <span>+7 (812) 385-50-19</span>
         </a>
         <a href="mailto:info@ptgs.ru" class="email">info@ptgs.ru</a>
-        <a href="#" class="header__search">
+        <a href="#" class="header__search js-show-me-header">
           <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none">
             <path stroke="#fff" stroke-miterlimit="10" stroke-width="2"
               d="M9.885 18.77a8.885 8.885 0 1 0 0-17.77 8.885 8.885 0 0 0 0 17.77ZM16.23 16.23 23 23" />
@@ -281,6 +280,40 @@
       </div>
 
     </div>
+    <!-- блок поиска по сайту  -->
+    <section class="header-search">
+      <div class="wrapper">
+        <div class="header-search__flex">
+          <h2 class="header-search__title">Поиск по сайту</h2>
+
+          <form action="" class="custom-form">
+
+            <div class="custom-form__input">
+              <input type="search" name="user-search" placeholder="Введите поисковый запрос">
+            </div>
+
+
+            <button class="button" type="submit">
+              <span class="button__icon">
+                <svg width="18" height="18" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <path
+                    d="M7.58909 13.5128C10.8603 13.5128 13.5122 10.861 13.5122 7.58973C13.5122 4.31851 10.8603 1.66666 7.58909 1.66666C4.31787 1.66666 1.66602 4.31851 1.66602 7.58973C1.66602 10.861 4.31787 13.5128 7.58909 13.5128Z"
+                    stroke="#0066B3" stroke-width="2" stroke-miterlimit="10" />
+                  <path d="M11.8203 11.8205L16.3331 16.3333" stroke="#0066B3" stroke-width="2" stroke-miterlimit="10" />
+                </svg>
+
+              </span>
+              <span class="button__text">Найти</span>
+            </button>
+          </form>
+          <button class="close" type="button"><svg viewBox="0 0 34 34" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path d="M1 1L33 33" stroke="white" stroke-width="2" />
+              <path d="M33 1L0.999999 33" stroke="white" stroke-width="2" />
+            </svg>
+          </button>
+        </div>
+      </div>
+    </section>
   </header>
 
   <main class="main">

@@ -43,7 +43,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
 
   // Гибридный аккордеон в мобильном меню
-  if (document.documentElement.clientWidth <= 767) {
+  if (document.documentElement.clientWidth <= 1279) {
     // Находим все ссылки с классом .js-accordion-link
     let links = document.querySelectorAll('.js-accordion-link');
 
