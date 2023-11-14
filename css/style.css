@@ -153,6 +153,7 @@
   --Black: #000000;
   --White2: rgba(255, 255, 255, 0.2);
   --DarkBlue: #162A75;
+  --DarkBlue2: #0B4894;
   --Blue: #0066B3;
   --Blue2: rgba(0, 102, 179, 0.3);
   --LightBlue: #00AEEF;
@@ -1776,7 +1777,6 @@ li:not(:last-of-type) .pagination__link {
   position: relative;
   padding: 7px 16px 9px;
   border-radius: 4px;
-  background-color: var(--Blue);
   transition: all 0.3s;
   display: flex;
   max-width: 100%;
@@ -1801,7 +1801,7 @@ li:not(:last-of-type) .pagination__link {
   opacity: 0;
 }
 .main-navigation__link:hover, .main-navigation__link:focus, .main-navigation__link:active {
-  background-color: var(--Blue);
+  background-color: var(--DarkBlue2);
 }
 .main-navigation__link:hover svg path, .main-navigation__link:focus svg path, .main-navigation__link:active svg path {
   stroke: var(--White);
@@ -1810,20 +1810,20 @@ li:not(:last-of-type) .pagination__link {
   opacity: 1;
 }
 .main-navigation__item:hover, .main-navigation__item:focus, .main-navigation__item:active {
-  background-color: var(--Blue);
+  background-color: var(--DarkBlue2);
 }
 .main-navigation__item:hover svg, .main-navigation__item:focus svg, .main-navigation__item:active svg {
   transform: translateY(0);
 }
 .main-navigation__item:hover .main-navigation__link, .main-navigation__item:focus .main-navigation__link, .main-navigation__item:active .main-navigation__link {
-  background-color: var(--Blue);
+  background-color: var(--DarkBlue2);
 }
 .main-navigation__item:hover .main-navigation__decorate, .main-navigation__item:focus .main-navigation__decorate, .main-navigation__item:active .main-navigation__decorate {
   transform: translateY(15px);
-  background-color: var(--Blue);
+  background-color: var(--DarkBlue2);
 }
 .main-navigation__item:hover .main-navigation__sublist, .main-navigation__item:focus .main-navigation__sublist, .main-navigation__item:active .main-navigation__sublist {
-  background-color: var(--Blue);
+  background-color: var(--DarkBlue2);
   opacity: 1;
   visibility: initial;
   pointer-events: initial;

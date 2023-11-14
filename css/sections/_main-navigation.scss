@@ -59,7 +59,7 @@
     position: relative;
     padding: 7px 16px 9px;
     border-radius: 4px;
-    background-color: var(--Blue);
+    // background-color: var(--DarkBlue2);
     transition: all 0.3s;
     display: flex;
     max-width: 100%;
@@ -87,7 +87,7 @@
   &__link:hover,
   &__link:focus,
   &__link:active {
-    background-color: var(--Blue);
+    background-color: var(--DarkBlue2);
     svg path {
       stroke: var(--White);
     }
@@ -99,19 +99,19 @@
   &__item:hover,
   &__item:focus,
   &__item:active {
-    background-color: var(--Blue);
+    background-color: var(--DarkBlue2);
     svg {
       transform: translateY(0);
     }
     .main-navigation__link {
-      background-color: var(--Blue);
+      background-color: var(--DarkBlue2);
     }
     .main-navigation__decorate {
       transform: translateY(15px);
-      background-color: var(--Blue);
+      background-color: var(--DarkBlue2);
     }
     .main-navigation__sublist {
-      background-color: var(--Blue);
+      background-color: var(--DarkBlue2);
       opacity: 1;
       visibility: initial;
       pointer-events: initial;
