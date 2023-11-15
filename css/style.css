@@ -1569,6 +1569,12 @@ li:not(:last-of-type) .pagination__link {
   margin-bottom: 28px;
   opacity: 0.7;
 }
+.modal .custom-map {
+  position: relative;
+  z-index: 99;
+  height: 400px;
+  width: 100%;
+}
 
 .header {
   transition: all 0.6s;
@@ -3866,6 +3872,15 @@ li:not(:last-of-type) .pagination__link {
   overflow: hidden;
 }
 .modal-call-back #modal-call-back {
+  pointer-events: initial;
+  visibility: visible;
+  opacity: 1;
+}
+
+.modal-show-map {
+  overflow: hidden;
+}
+.modal-show-map #modal-show-map {
   pointer-events: initial;
   visibility: visible;
   opacity: 1;

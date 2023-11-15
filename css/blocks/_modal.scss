@@ -60,4 +60,11 @@
     opacity: 0.7;
   }
 
+  .custom-map {
+    position: relative;
+    z-index: 99;
+    height: 400px;
+    width: 100%;
+}
+
 }
