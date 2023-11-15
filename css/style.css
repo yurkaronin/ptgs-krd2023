@@ -1576,19 +1576,19 @@ li:not(:last-of-type) .pagination__link {
   width: 100%;
 }
 
-.custom-form__input:has(input:invalid) {
+.custom-form__input:has(input:user-invalid) {
   border-color: red;
 }
 
-.custom-form__input:has(textarea:invalid) {
+.custom-form__input:has(textarea:user-invalid) {
   border-color: red;
 }
 
-input:invalid::placeholder {
+input:user-invalid::placeholder {
   color: red;
 }
 
-textarea:invalid::placeholder {
+textarea:user-invalid::placeholder {
   color: red;
 }
 
@@ -3884,21 +3884,15 @@ textarea:invalid::placeholder {
   opacity: 1;
 }
 
-.modal-call-back {
-  overflow: hidden;
-}
-.modal-call-back #modal-call-back {
+.modal {
   pointer-events: initial;
-  visibility: visible;
-  opacity: 1;
+  visibility: hidden; /* Скрыть все модалки по умолчанию */
+  opacity: 0;
+  transition: opacity 0.3s, visibility 0.3s; /* Плавный переход для видимости и прозрачности */
 }
 
-.modal-show-map {
-  overflow: hidden;
-}
-.modal-show-map #modal-show-map {
-  pointer-events: initial;
-  visibility: visible;
+.modal.active {
+  visibility: visible; /* Показать активную модалку */
   opacity: 1;
 }
 

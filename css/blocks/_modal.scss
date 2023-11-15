@@ -69,14 +69,14 @@
 
 }
 
-.custom-form__input:has(input:invalid) {
+.custom-form__input:has(input:user-invalid) {
   border-color: red;
 }
-.custom-form__input:has(textarea:invalid) {
+.custom-form__input:has(textarea:user-invalid) {
   border-color: red;
 }
 
-input:invalid {
+input:user-invalid {
   // border: 1px solid red !important;
   &::placeholder {
     color: red;
@@ -84,7 +84,7 @@ input:invalid {
 
 }
 
-textarea:invalid {
+textarea:user-invalid {
   // border: 1px solid red !important;
   &::placeholder {
     color: red;

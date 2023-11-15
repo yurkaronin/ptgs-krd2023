@@ -1,17 +1,39 @@
-.modal-call-back {
-  overflow: hidden;
-  #modal-call-back {
-    pointer-events: initial;
-    visibility: visible;
-    opacity: 1;
-  }
+// .modal-call-back {
+//   overflow: hidden;
+//   #modal-call-back {
+//     pointer-events: initial;
+//     visibility: visible;
+//     opacity: 1;
+//   }
+// }
+
+// .modal-show-map {
+//   overflow: hidden;
+//   #modal-show-map {
+//     pointer-events: initial;
+//     visibility: visible;
+//     opacity: 1;
+//   }
+// }
+
+// .modal-has-been-sent {
+//   overflow: hidden;
+//   #modal-has-been-sent {
+//     pointer-events: initial;
+//     visibility: visible;
+//     opacity: 1;
+//   }
+// }
+
+.modal {
+  pointer-events: initial;
+  visibility: hidden; /* Скрыть все модалки по умолчанию */
+  opacity: 0;
+  transition: opacity 0.3s, visibility 0.3s; /* Плавный переход для видимости и прозрачности */
 }
 
-.modal-show-map {
-  overflow: hidden;
-  #modal-show-map {
-    pointer-events: initial;
-    visibility: visible;
-    opacity: 1;
-  }
+.modal.active {
+  visibility: visible; /* Показать активную модалку */
+  opacity: 1;
 }
+
