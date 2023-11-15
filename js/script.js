@@ -378,6 +378,20 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   });
 
+  // Настройки маски для телефона
+  const maskOptions = {
+    mask: '+{7}(000)000-00-00'
+  };
+
+  // Находим все элементы ввода с типом 'tel'
+  const phoneInputs = document.querySelectorAll('input[type="tel"]');
+
+  // Применяем маску ко всем таким элементам
+  phoneInputs.forEach(input => {
+    IMask(input, maskOptions);
+  });
+
+
 
 
 });
