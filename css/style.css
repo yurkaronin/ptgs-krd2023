@@ -1576,6 +1576,22 @@ li:not(:last-of-type) .pagination__link {
   width: 100%;
 }
 
+.custom-form__input:has(input:invalid) {
+  border-color: red;
+}
+
+.custom-form__input:has(textarea:invalid) {
+  border-color: red;
+}
+
+input:invalid::placeholder {
+  color: red;
+}
+
+textarea:invalid::placeholder {
+  color: red;
+}
+
 .header {
   transition: all 0.6s;
   position: fixed;

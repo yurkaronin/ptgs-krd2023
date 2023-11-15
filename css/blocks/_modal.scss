@@ -68,3 +68,26 @@
 }
 
 }
+
+.custom-form__input:has(input:invalid) {
+  border-color: red;
+}
+.custom-form__input:has(textarea:invalid) {
+  border-color: red;
+}
+
+input:invalid {
+  // border: 1px solid red !important;
+  &::placeholder {
+    color: red;
+  }
+
+}
+
+textarea:invalid {
+  // border: 1px solid red !important;
+  &::placeholder {
+    color: red;
+  }
+
+}
