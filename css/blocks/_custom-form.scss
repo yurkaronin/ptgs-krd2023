@@ -98,8 +98,6 @@
     transition: all 0.3s;
   }
   textarea {
-    max-width: 100%;
-    width: 100%;
     border-radius: 2px;
     background: var(--White);
     max-width: 100%;
@@ -120,10 +118,11 @@
   @media (max-width: 767px) {
     &__grid {
       grid-template-columns: repeat(1, 1fr);
+      gap: 14px;
     }
     &__footer {
       flex-direction: column;
-
+      align-items: flex-start;
       .button {
         margin-top: 25px;
       }

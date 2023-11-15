@@ -402,8 +402,8 @@
                 помещения, стоянка для личного и служебного автотранспорта, общежитие для проживания рабочих, уютная
                 столовая и офис для ИТР состава.</li>
             </ul>
-
-            <a href="#" class="button">
+            <!-- Кнопка вызова диалогового окна  -->
+            <a href="#" class="button" data-target="modal-call-back">
               <span class="button__icon">
                 <svg xmlns="http://www.w3.org/2000/svg" width="18" height="10" fill="none">
                   <path stroke="#0066B3" stroke-width="2" d="m12 1 4 4m0 0-4 4m4-4H0"></path>
@@ -613,6 +613,63 @@
 
     </div>
   </footer>
+
+  <!-- Диалоговое окно  -->
+  <section class="modal" id="modal-call-back">
+    <div class="wrapper">
+
+      <div class="modal__body">
+        <h2 class="section-label">Заказать услугу</h2>
+        <p class="title">Модернизация и реконструкция</p>
+        <p class="text">Заполните простую форму и мы свяжемся с Вами в ближайшее время</p>
+
+        <form action="" class="custom-form">
+          <div class="custom-form__grid">
+
+            <div class="custom-form__group">
+              <label class="custom-form__label" for="user-name">Ваше имя</label>
+              <div class="custom-form__input">
+                <input type="text" name="user-name" id="user-name" placeholder="Представьтесь пожалуйста">
+              </div>
+            </div>
+            <div class="custom-form__group">
+              <label class="custom-form__label" for="user-phone">Телефон</label>
+              <div class="custom-form__input">
+                <input type="text" name="user-phone" id="user-phone" placeholder="Для связи с вами">
+              </div>
+            </div>
+          </div>
+
+          <div class="custom-form__footer">
+            <div class="custom-form__check">
+              <input class="visually-hidden" type="checkbox" name="user-consent" id="user-consent" checked="">
+              <label class="custom-form__consent" for="user-consent">Даю согласие на обработку <a href="#">персональных
+                  данных</a></label>
+            </div>
+
+            <button class="button" type="submit">
+              <span class="button__icon">
+                <svg xmlns="http://www.w3.org/2000/svg" width="18" height="10" fill="none">
+                  <path stroke="#0066B3" stroke-width="2" d="m12 1 4 4m0 0-4 4m4-4H0"></path>
+                </svg>
+
+              </span>
+              <span class="button__text">Отправить</span>
+            </button>
+          </div>
+
+        </form>
+        <button class="modal__close" type="button">
+          <svg width="18" height="18" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M1 1L17 17" stroke="white" stroke-width="2"/>
+            <path d="M17 1L1 17" stroke="white" stroke-width="2"/>
+            </svg>
+        </button>
+      </div>
+
+
+    </div>
+  </section>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.9.1/gsap.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.9.1/ScrollTrigger.min.js"></script>
   <script src="./libs/swiper-bundle.min.js"></script>

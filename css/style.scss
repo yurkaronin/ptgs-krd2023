@@ -32,6 +32,7 @@
 @import "blocks/pagination";
 @import "blocks/customers-list";
 @import "blocks/custom-form";
+@import "blocks/modal";
 
 @import "sections/header";
 
@@ -64,6 +65,7 @@
 @import "activity/menu-open";
 @import "activity/header-sticky";
 @import "activity/header-search-active";
+@import "activity/modal-show";
 
 .home-page {
   .work-direction {
@@ -106,3 +108,5 @@
     }
   }
 }
+
+

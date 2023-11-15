@@ -157,6 +157,7 @@
   --Blue: #0066B3;
   --Blue2: rgba(0, 102, 179, 0.3);
   --LightBlue: #00AEEF;
+  --DarkBlue3: #455591;
 }
 
 html {
@@ -1482,8 +1483,6 @@ li:not(:last-of-type) .pagination__link {
   transition: all 0.3s;
 }
 .custom-form textarea {
-  max-width: 100%;
-  width: 100%;
   border-radius: 2px;
   background: var(--White);
   max-width: 100%;
@@ -1503,13 +1502,72 @@ li:not(:last-of-type) .pagination__link {
 @media (max-width: 767px) {
   .custom-form__grid {
     grid-template-columns: repeat(1, 1fr);
+    gap: 14px;
   }
   .custom-form__footer {
     flex-direction: column;
+    align-items: flex-start;
   }
   .custom-form__footer .button {
     margin-top: 25px;
   }
+}
+
+.modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  width: 100%;
+  height: 100%;
+  align-items: center;
+  justify-content: center;
+  display: flex;
+  visibility: hidden;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.5s, visibility 0.5s;
+  background-color: rgba(0, 0, 0, 0.73);
+  z-index: 9999;
+}
+.modal__body {
+  padding: 40px 32px 45px;
+  max-width: 945px;
+  width: 100%;
+  position: relative;
+  margin: 0 auto;
+  max-height: 90vh;
+  overflow: auto;
+  border: 1px solid var(--DarkBlue3);
+  background: var(--DarkBlue);
+}
+.modal__close {
+  position: absolute;
+  top: 24px;
+  right: 32px;
+  border: none;
+  cursor: pointer;
+  padding: 0;
+  width: 48px;
+  height: 48px;
+  flex-shrink: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  background-color: var(--LightBlue);
+  overflow: visible;
+}
+.modal__close svg {
+  flex-shrink: 0;
+}
+.modal .title {
+  margin-bottom: 8px;
+}
+.modal .text {
+  margin-bottom: 28px;
+  opacity: 0.7;
 }
 
 .header {
@@ -3801,6 +3859,15 @@ li:not(:last-of-type) .pagination__link {
   top: 0;
   visibility: initial;
   pointer-events: initial;
+  opacity: 1;
+}
+
+.modal-call-back {
+  overflow: hidden;
+}
+.modal-call-back #modal-call-back {
+  pointer-events: initial;
+  visibility: visible;
   opacity: 1;
 }
 

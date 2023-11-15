@@ -323,7 +323,61 @@ document.addEventListener("DOMContentLoaded", () => {
       map.controls.remove('typeSelector');
       map.behaviors.disable(['scrollZoom']);
     }
+  };
+
+  // Работа с модальными окнами
+  // Функция, обрабатывающая клик или касание элемента.
+  const handleClickOrTouch = (element, callback) => {
+    // Слушатель для события 'touchend' (завершение касания).
+    const touchendListener = (e) => {
+      e.preventDefault(); // Предотвращение стандартного действия
+      element.removeEventListener('touchend', touchendListener); // Удаление слушателя после однократного выполнения
+      callback(e); // Вызов переданного обратного вызова
+    };
+
+    // Добавление слушателя для события 'click' (клик мышью).
+    element.addEventListener('click', callback);
+
+    // Добавление слушателя для начала касания 'touchstart'.
+    element.addEventListener('touchstart', (e) => {
+      e.preventDefault(); // Предотвращение стандартного действия
+      element.addEventListener('touchend', touchendListener); // Добавление слушателя для завершения касания
+    });
+  };
+
+  // Поиск всех элементов с атрибутом data-target.
+  let showDialogButtons = document.querySelectorAll('[data-target]');
+  let targetClass = null;
+
+  // Функция для установки слушателя на весь документ.
+  const setupBodyClickListener = () => {
+    // Добавление слушателя клика на весь документ.
+    document.addEventListener('click', function listener(event) {
+      // Проверка, был ли клик за пределами диалогового окна или на кнопку закрытия.
+      if (!event.target.closest('.modal__body') || event.target.closest('.modal__close')) {
+        // Удаление класса у элемента body.
+        document.body.classList.remove(targetClass);
+        targetClass = null;
+        // Удаление слушателя после однократного выполнения.
+        document.removeEventListener('click', listener);
+      }
+    });
   }
+
+  // Для каждого найденного элемента с атрибутом data-target:
+  showDialogButtons.forEach(button => {
+    handleClickOrTouch(button, function (event) {
+      event.preventDefault();  // Предотвращение стандартного действия
+      event.stopPropagation(); // Остановка распространения события
+      // Получение значения атрибута data-target.
+      targetClass = event.currentTarget.getAttribute('data-target');
+      // Добавление класса к элементу body.
+      document.body.classList.add(targetClass);
+      // Установка слушателя на весь документ.
+      setupBodyClickListener();
+    });
+  });
+
 
 
 });
