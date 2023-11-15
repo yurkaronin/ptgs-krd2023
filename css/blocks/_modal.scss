@@ -24,15 +24,14 @@
     width: 100%;
     position: relative;
     margin: 0 auto;
-    max-height: 90vh;
-    overflow: auto;
+
     border: 1px solid var(--DarkBlue3);
     background: var(--DarkBlue);
   }
 
   &__close {
     position: absolute;
-    top: 24px;
+    top: -24px;
     right: 32px;
     border: none;
     cursor: pointer;
@@ -58,6 +57,7 @@
   .text {
     margin-bottom: 28px;
     opacity: 0.7;
+    font-family: var(--Roboto);
   }
 
   .custom-map {
@@ -65,8 +65,27 @@
     z-index: 99;
     height: 400px;
     width: 100%;
-}
-
+  }
+  .section-label::before {
+    width: 32px;
+    left: -32px;
+  }
+  @media (max-width: 767px) {
+    &__body {
+      padding: 30px 20px;
+    }
+    .section-label::before {
+      width: 20px;
+      left: -20px;
+    }
+    .text {
+      font-size: 14px;
+      margin-bottom: 24px;
+    }
+    &__close {
+      right: 12px;
+    }
+  }
 }
 
 .custom-form__input:has(input:user-invalid) {
@@ -81,7 +100,6 @@ input:user-invalid {
   &::placeholder {
     color: red;
   }
-
 }
 
 textarea:user-invalid {
@@ -89,5 +107,4 @@ textarea:user-invalid {
   &::placeholder {
     color: red;
   }
-
 }

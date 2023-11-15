@@ -1537,14 +1537,12 @@ li:not(:last-of-type) .pagination__link {
   width: 100%;
   position: relative;
   margin: 0 auto;
-  max-height: 90vh;
-  overflow: auto;
   border: 1px solid var(--DarkBlue3);
   background: var(--DarkBlue);
 }
 .modal__close {
   position: absolute;
-  top: 24px;
+  top: -24px;
   right: 32px;
   border: none;
   cursor: pointer;
@@ -1568,12 +1566,33 @@ li:not(:last-of-type) .pagination__link {
 .modal .text {
   margin-bottom: 28px;
   opacity: 0.7;
+  font-family: var(--Roboto);
 }
 .modal .custom-map {
   position: relative;
   z-index: 99;
   height: 400px;
   width: 100%;
+}
+.modal .section-label::before {
+  width: 32px;
+  left: -32px;
+}
+@media (max-width: 767px) {
+  .modal__body {
+    padding: 30px 20px;
+  }
+  .modal .section-label::before {
+    width: 20px;
+    left: -20px;
+  }
+  .modal .text {
+    font-size: 14px;
+    margin-bottom: 24px;
+  }
+  .modal__close {
+    right: 12px;
+  }
 }
 
 .custom-form__input:has(input:user-invalid) {
