@@ -1,5 +1,5 @@
 .swiper {
-  overflow: initial;
+  // overflow: initial;
 }
 .swiper-button {
   background-color: var(--DarkBlue);
@@ -10,6 +10,7 @@
   align-items: center;
   justify-content: center;
   border: none;
+  z-index: 2;
   &::after {
     display: none;
   }
@@ -26,4 +27,8 @@
 .swiper-button-prev {
   left: -34px;
   right: initial;
+}
+
+.swiper-button-disabled {
+  opacity: 0 !important;
 }

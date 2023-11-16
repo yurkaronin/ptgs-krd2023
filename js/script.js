@@ -68,21 +68,22 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   };
   // слайдер с логотипами
-  if (document.querySelector('.customers .mySwiper')) {
+  if (document.querySelector('.customers__slider .mySwiper')) {
     console.log('Слайдер с логотипами есть!');
-    var swiperCustomers = new Swiper(".customers .mySwiper", {
+    var swiperCustomers = new Swiper(".customers__slider .mySwiper", {
       // slidesPerView: 6,
       spaceBetween: 32,
       navigation: {
-        nextEl: ".customers .swiper-button-next",
-        prevEl: ".customers .swiper-button-prev",
+        nextEl: ".customers__slider .swiper-button-next",
+        prevEl: ".customers__slider .swiper-button-prev",
       },
       breakpoints: {
-        // when window width is >= 320px
-        425: {
+        320: {
           slidesPerView: 1
         },
-        // when window width is >= 480px
+        450: {
+          slidesPerView: 2
+        },
         767: {
           slidesPerView: 2
         },
@@ -90,11 +91,11 @@ document.addEventListener("DOMContentLoaded", () => {
           slidesPerView: 3
         },
         1279: {
-          slidesPerView: 4
+          slidesPerView: 3
         },
         // when window width is >= 640px
         1600: {
-          slidesPerView: 6
+          slidesPerView: 3
         }
       }
     });
