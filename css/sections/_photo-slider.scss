@@ -1,4 +1,7 @@
 .photo-slider {
+  &__swiper {
+    position: relative;
+  }
   .swiper-slide img {
     border-radius: 4px;
     overflow: hidden;

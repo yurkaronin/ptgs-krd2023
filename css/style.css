@@ -3591,6 +3591,9 @@ textarea:user-invalid::placeholder {
   }
 }
 
+.photo-slider__swiper {
+  position: relative;
+}
 .photo-slider .swiper-slide img {
   border-radius: 4px;
   overflow: hidden;
