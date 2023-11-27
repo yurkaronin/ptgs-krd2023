@@ -41,9 +41,9 @@
       font-weight: 700;
       line-height: 1;
       margin-bottom: 20px;
-      padding-top: 30px;
+      padding-top: 0;
       border-top: 1px solid var(--White2);
-      margin-top: 32px;
+      margin-top: 26px;
     }
   }
   &__logo {
@@ -64,6 +64,15 @@
     }
     &--mod2 {
       background-color: var(--Gray);
+    }
+  }
+  @media (max-width: 767px) {
+    grid-template-columns: repeat(1, 1fr);
+    gap: 24px;
+
+    &__text span {
+      margin-top: 18px;
+      padding-top: 16px;
     }
   }
 }

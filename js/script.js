@@ -133,6 +133,32 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   }
 
+  // слайдер с преимуществами
+  // Функция для инициализации слайдера
+  function initSwiperAdvantages() {
+    var swiperAdvantages = new Swiper(".advantages__slider .mySwiper", {
+      slidesPerView: 'auto',
+      spaceBetween: 24,
+      scrollbar: {
+        el: ".swiper-scrollbar",
+        hide: true,
+      }
+    });
+  }
+
+  // Проверяем, есть ли элемент с классом .advantages__slider--on
+  if (document.querySelector('.advantages__slider--on .mySwiper')) {
+
+    console.log('Слайдер с классом .advantages__slider--on найден!');
+
+    initSwiperAdvantages(); // Инициализируем слайдер без проверки ширины экрана
+  } else if (document.querySelector('.advantages__slider .mySwiper') && window.innerWidth <= 1600) {
+    console.log('Слайдер без класса .advantages__slider--on найден и ширина экрана подходящая!');
+    initSwiperAdvantages(); // Инициализируем слайдер с проверкой ширины экрана
+  }
+
+
+
   // Аккондиончики в подвале с менюшками
   // Получаем все элементы с классом .footer-accordion
   const accordions = document.querySelectorAll('.footer-accordion');
@@ -328,100 +354,100 @@ document.addEventListener("DOMContentLoaded", () => {
 
   // Доработки версии скриптов валидации формы
   // Работа с модальными окнами
-const handleClickOrTouch = (element, callback) => {
-  const touchendListener = (e) => {
-    e.preventDefault();
-    element.removeEventListener('touchend', touchendListener);
-    callback(e);
+  const handleClickOrTouch = (element, callback) => {
+    const touchendListener = (e) => {
+      e.preventDefault();
+      element.removeEventListener('touchend', touchendListener);
+      callback(e);
+    };
+
+    element.addEventListener('click', callback);
+    element.addEventListener('touchstart', (e) => {
+      e.preventDefault();
+      element.addEventListener('touchend', touchendListener);
+    });
   };
 
-  element.addEventListener('click', callback);
-  element.addEventListener('touchstart', (e) => {
-    e.preventDefault();
-    element.addEventListener('touchend', touchendListener);
-  });
-};
+  const setupBodyClickListener = () => {
+    document.removeEventListener('click', bodyClickListener);
 
-const setupBodyClickListener = () => {
-  document.removeEventListener('click', bodyClickListener);
-
-  function bodyClickListener(event) {
-    let activeModal = document.querySelector('.modal.active');
-    if (activeModal && (!event.target.closest('.modal__body') || event.target.closest('.js-close-modal'))) {
-      activeModal.classList.remove('active');
-      document.removeEventListener('click', bodyClickListener);
+    function bodyClickListener(event) {
+      let activeModal = document.querySelector('.modal.active');
+      if (activeModal && (!event.target.closest('.modal__body') || event.target.closest('.js-close-modal'))) {
+        activeModal.classList.remove('active');
+        document.removeEventListener('click', bodyClickListener);
+      }
     }
-  }
 
-  document.addEventListener('click', bodyClickListener);
-};
+    document.addEventListener('click', bodyClickListener);
+  };
 
-let showDialogButtons = document.querySelectorAll('[data-target]');
-showDialogButtons.forEach(button => {
-  handleClickOrTouch(button, function (event) {
-    event.preventDefault();
-    event.stopPropagation();
+  let showDialogButtons = document.querySelectorAll('[data-target]');
+  showDialogButtons.forEach(button => {
+    handleClickOrTouch(button, function (event) {
+      event.preventDefault();
+      event.stopPropagation();
 
-    let targetClass = event.currentTarget.getAttribute('data-target');
-    let modal = document.getElementById(targetClass);
+      let targetClass = event.currentTarget.getAttribute('data-target');
+      let modal = document.getElementById(targetClass);
 
-    if (modal) {
-      modal.classList.add('active');
+      if (modal) {
+        modal.classList.add('active');
+        setupBodyClickListener();
+      }
+    });
+  });
+
+  // Закрытие активного модального окна
+  const closeActiveModal = () => {
+    let activeModal = document.querySelector('.modal.active');
+    if (activeModal) {
+      activeModal.classList.remove('active');
+    }
+  };
+
+  // Показать модальное окно с сообщением об успешной отправке
+  const showSuccessModal = () => {
+    let successModal = document.getElementById('successModal');
+    if (successModal) {
+      successModal.classList.add('active');
       setupBodyClickListener();
     }
+  };
+
+  // Настройки маски для телефона
+  const maskOptions = {
+    mask: '+{7}(000)000-00-00'
+  };
+
+  // Находим все элементы ввода с типом 'tel'
+  const phoneInputs = document.querySelectorAll('input[type="tel"]');
+  phoneInputs.forEach(input => {
+    IMask(input, maskOptions);
+    input.setAttribute('pattern', '\\+7\\(\\d{3}\\)\\d{3}-\\d{2}-\\d{2}');
+    input.setAttribute('title', 'Номер телефона должен содержать 11 цифр');
   });
-});
 
-// Закрытие активного модального окна
-const closeActiveModal = () => {
-  let activeModal = document.querySelector('.modal.active');
-  if (activeModal) {
-    activeModal.classList.remove('active');
-  }
-};
+  // Находим все формы на странице
+  const forms = document.querySelectorAll('form');
+  forms.forEach(form => {
+    form.addEventListener('submit', function (event) {
+      event.preventDefault();
 
-// Показать модальное окно с сообщением об успешной отправке
-const showSuccessModal = () => {
-  let successModal = document.getElementById('successModal');
-  if (successModal) {
-    successModal.classList.add('active');
-    setupBodyClickListener();
-  }
-};
+      // Проверка валидации формы перед отправкой
+      if (!form.checkValidity()) {
+        event.stopPropagation();
+        form.classList.add('was-validated');
+        return;
+      }
 
-// Настройки маски для телефона
-const maskOptions = {
-  mask: '+{7}(000)000-00-00'
-};
+      // Закрытие текущего модального окна
+      closeActiveModal();
 
-// Находим все элементы ввода с типом 'tel'
-const phoneInputs = document.querySelectorAll('input[type="tel"]');
-phoneInputs.forEach(input => {
-  IMask(input, maskOptions);
-  input.setAttribute('pattern', '\\+7\\(\\d{3}\\)\\d{3}-\\d{2}-\\d{2}');
-  input.setAttribute('title', 'Номер телефона должен содержать 11 цифр');
-});
-
-// Находим все формы на странице
-const forms = document.querySelectorAll('form');
-forms.forEach(form => {
-  form.addEventListener('submit', function (event) {
-    event.preventDefault();
-
-    // Проверка валидации формы перед отправкой
-    if (!form.checkValidity()) {
-      event.stopPropagation();
-      form.classList.add('was-validated');
-      return;
-    }
-
-    // Закрытие текущего модального окна
-    closeActiveModal();
-
-    // Показать модальное окно с сообщением об успешной отправке
-    showSuccessModal();
+      // Показать модальное окно с сообщением об успешной отправке
+      showSuccessModal();
+    });
   });
-});
 
 
 

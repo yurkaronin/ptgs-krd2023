@@ -5,7 +5,7 @@
   z-index: 2;
   &__grid {
     display: grid;
-    gap: 0 32px;
+    gap: 88px 32px;
     grid-template-columns: repeat(12, 1fr);
   }
   &__grid-left {
@@ -20,14 +20,6 @@
   }
   &--mod &__grid-right-two {
     grid-column: 7/13;
-  }
-  &__list {
-    list-style: none;
-    padding: 0;
-    margin: 0;
-    display: grid;
-    gap: 32px;
-    grid-template-columns: repeat(3, 1fr);
   }
 
   &__card {
@@ -198,21 +190,13 @@
   }
 
   @media (max-width: 1600px) {
-    &__list {
-      display: flex;
-      gap: 24px;
-      overflow: scroll;
-      margin-left: -100px;
-      transform: translateX(100px);
-      padding-right: 100px;
-      padding-bottom: 10px;
-    }
     &__card {
       max-width: 272px;
       flex-shrink: 0;
     }
     &__grid {
       gap: 0 32px;
+      align-items: flex-start;
     }
     &__grid-right {
       grid-column: 1/13;
@@ -223,12 +207,15 @@
       grid-column: 1/13;
     }
     &--mod &__grid-left {
-      grid-column: 1/6;
+      grid-column: 1/10;
     }
     &--mod &__grid-right-two {
-      grid-column: 7/13;
+      grid-column: 10/13;
       grid-row-start: 2;
       grid-row-end: 4;
+    }
+    .docs-list {
+      grid-template-columns: 1fr;
     }
   }
   @media (max-width: 1279px) {
@@ -291,12 +278,12 @@
       margin-top: calc(-150px + -88px);
       margin-bottom: 23px;
     }
-    &__list {
-      margin-left: -50px;
-      transform: translateX(50px);
-      padding-right: 50px;
-      gap: 20px;
-    }
+    // &__list {
+    //   margin-left: -50px;
+    //   transform: translateX(50px);
+    //   padding-right: 50px;
+    //   gap: 20px;
+    // }
     &__card {
       max-width: 200px;
     }
@@ -330,5 +317,46 @@
     .animate-number {
       font-size: 55px;
     }
+    &__content p {
+      font-size: 20px;
+    }
+    &__subtitle {
+      font-size: 16px;
+    }
+    &__content ul {
+      font-size: 16px;
+      margin-bottom: 20px;
+    }
+    &__content li {
+      margin-bottom: 12px;
+      padding-left: 30px;
+  }
+  }
+}
+
+.advantages__list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+
+@media (min-width: 1601px) {
+  .advantages__list {
+    display: grid;
+    gap: 32px;
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  .advantages__slider--on .advantages__list {
+    display: flex;
+  }
+
+
+}
+
+@media (max-width: 1600px) {
+  .advantages__slider .swiper {
+    overflow: initial;
   }
 }

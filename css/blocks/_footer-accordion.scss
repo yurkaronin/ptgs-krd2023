@@ -12,6 +12,7 @@
     transition: all 0.3s;
     margin: 0;
   }
+
   &.active {
     .footer-navigation__sublist {
       opacity: 1;
@@ -24,13 +25,23 @@
       transform: rotate(-90deg);
     }
 
-    .footer-navigation__sublist {
-      margin-bottom: 40px;
-    }
+    // .footer-navigation__sublist {
+    //   margin-bottom: 40px;
+    // }
   }
   @media (max-width: 767px) {
     .footer-navigation__link {
       padding-top: 40px;
     }
+  }
+}
+
+.footer-navigation__link,
+.footer-navigation__sublink {
+  transition: all 0.3s;
+  &:hover,
+  &:active,
+  &:focus {
+    color: var(--LightBlue);
   }
 }

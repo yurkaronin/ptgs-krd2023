@@ -7,23 +7,51 @@
   grid-template-columns: repeat(5, 1fr);
 
   &__logo {
-    border-radius: 4px;
-    background: var(--White);
+    background-color: transparent;
     padding: 24px 40px;
     margin-bottom: 15px;
     display: flex;
     align-items: center;
     justify-content: center;
+    position: relative;
+    &::before {
+      content: "";
+      position: absolute;
+      left: 0;
+      top: 0;
+      bottom: 0;
+      right: 0;
+      transition: all 0.3s ease-in-out;
+      pointer-events: none;
+      background-color: var(--White);
+      z-index: 0;
+      border-radius: 4px;
+    }
     img {
       display: block;
       flex-shrink: 0;
+      position: relative;
+      z-index: 2;
+    }
+    &:hover,
+    &:focus {
+      &::before {
+        left: -8px;
+        top: -8px;
+        bottom: -8px;
+        right: -8px;
+      }
     }
   }
   &__logo--mod1 {
-    background-color: var(--Black);
+    &::before {
+      background-color: var(--Black);
+    }
   }
   &__logo--mod2 {
-    background-color: var(--Gray);
+    &::before {
+      background-color: var(--Gray);
+    }
   }
   &__name {
     display: block;

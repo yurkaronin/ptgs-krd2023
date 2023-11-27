@@ -19,14 +19,28 @@
     width: 100%;
     max-width: 100%;
     height: 100%;
+    padding-top: 10px;
+    padding-bottom: 10px;
   }
   .swiper-slide {
-    background-color: var(--White);
     display: flex;
     align-items: center;
     justify-content: center;
     padding: 24px 24px;
-
+    position: relative;
+    &::before {
+      content: "";
+      position: absolute;
+      left: 0;
+      top: 0;
+      bottom: 0;
+      right: 0;
+      transition: all 0.3s ease-in-out;
+      pointer-events: none;
+      background-color: var(--White);
+      z-index: 0;
+      border-radius: 4px;
+    }
     img {
       display: block;
       max-width: 192px;
@@ -34,13 +48,28 @@
       width: 100%;
       object-fit: contain;
       flex-shrink: 0;
+      position: relative;
+      z-index: 2;
+    }
+    &:hover,
+    &:focus {
+      &::before {
+        left: -8px;
+        top: -8px;
+        bottom: -8px;
+        right: -8px;
+      }
     }
   }
   .swiper-slide--mod1 {
-    background-color: var(--Black);
+    &::before {
+      background-color: var(--Black);
+    }
   }
   .swiper-slide--mod2 {
-    background-color: var(--Gray);
+    &::before {
+      background-color: var(--Gray);
+    }
   }
 
   @media (max-width: 1600px) {

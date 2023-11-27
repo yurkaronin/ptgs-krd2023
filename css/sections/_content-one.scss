@@ -5,6 +5,10 @@
   font-family: var(--Roboto);
   font-size: 18px;
 
+  p:not([class]) {
+    margin-top: 0;
+  }
+
   &__columns-2 {
     columns: 2;
     column-gap: 32px;
@@ -76,5 +80,16 @@
   }
   @media (max-width: 767px) {
     font-size: 16px;
+    padding-top: 20px;
+    padding-bottom: 20px;
+
+    h1:not([class]),
+  h2:not([class]),
+  h3:not([class]),
+  h4:not([class]),
+  h5:not([class]),
+  h6:not([class]) {
+    font-size: 20px;
+  }
   }
 }

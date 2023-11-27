@@ -1,0 +1,40 @@
+.home-page {
+
+  .work-direction {
+    padding-top: 0;
+  }
+  .advantages {
+    padding-bottom: 44px;
+  }
+  .projects-group {
+    padding-top: 76px;
+  }
+
+  @media (min-width: 1280px) {
+    .home-screen__flex {
+      min-height: 100vh;
+    }
+  }
+
+  @media (max-width: 1600px) {
+    .advantages {
+      padding-bottom: 75px;
+    }
+  }
+  @media (max-width: 1279px) {
+    .advantages {
+      padding-bottom: 60px;
+    }
+    .projects-group {
+      padding-top: 60px;
+    }
+  }
+  @media (max-width: 767px) {
+    .advantages {
+      padding-bottom: 34px;
+    }
+    .projects-group {
+      padding-top: 40px;
+    }
+  }
+}

@@ -5,5 +5,11 @@
     pointer-events: initial;
     opacity: 1;
   }
+  .close svg path {
+    transition: all 0.3s;
+  }
+  .close:hover svg path {
+    stroke: var(--LightBlue);
+  }
 
 }

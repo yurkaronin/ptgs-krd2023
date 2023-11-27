@@ -166,8 +166,8 @@
       max-width: 100%;
       width: 100%;
       justify-content: space-between;
-      padding-top: 24px;
-      padding-bottom: 30px;
+      padding-top: 22px;
+      padding-bottom: 31px;
     }
     .js-accordion-link .mobile-icon {
       transform: rotate(90deg);
@@ -202,12 +202,17 @@
     &__sublink {
       background-color: transparent !important;
       font-size: 18px;
+      line-height: 1.6;
       border-radius: initial;
-      padding: 12px 0;
+      padding: 10px 0;
       svg {
+        // scale: 1.3;
+        width: 20px;
+        height: 20px;
         path {
-          stroke: var(--White);
+          stroke: var(--LightBlue);
           transition: all 0.3s;
+          stroke-width: 1;
         }
         path + path {
           opacity: 0;
@@ -240,6 +245,11 @@
   }
 
   @media (max-width: 767px) {
+    // display: flex;
+    // align-items: flex-start;
+    // flex-direction: column;
+    // justify-content: center;
+
     &__link {
       font-size: 24px;
       padding-top: 20px;
