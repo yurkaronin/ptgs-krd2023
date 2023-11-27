@@ -146,13 +146,7 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   }
 
-  // Проверяем, есть ли элемент с классом .advantages__slider--on
-  if (document.querySelector('.advantages__slider--on .mySwiper')) {
-
-    console.log('Слайдер с классом .advantages__slider--on найден!');
-
-    initSwiperAdvantages(); // Инициализируем слайдер без проверки ширины экрана
-  } else if (document.querySelector('.advantages__slider .mySwiper') && window.innerWidth <= 1600) {
+  if (document.querySelector('.advantages__slider .mySwiper') && window.innerWidth <= 1600) {
     console.log('Слайдер без класса .advantages__slider--on найден и ширина экрана подходящая!');
     initSwiperAdvantages(); // Инициализируем слайдер с проверкой ширины экрана
   }
