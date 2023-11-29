@@ -1809,6 +1809,7 @@ textarea:user-invalid::placeholder {
   }
   .header .mobile-details {
     margin-top: 20px;
+    margin-bottom: auto;
     display: block;
     color: #fff;
     font-size: 20px;
@@ -1876,6 +1877,11 @@ textarea:user-invalid::placeholder {
   }
 }
 
+.main-navigation {
+  display: grid;
+  grid-template-columns: repeat(1fr);
+  align-items: center;
+}
 .main-navigation__list {
   display: flex;
   align-items: center;

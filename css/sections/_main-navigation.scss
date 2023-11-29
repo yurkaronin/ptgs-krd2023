@@ -1,4 +1,7 @@
 .main-navigation {
+  display: grid;
+  grid-template-columns: repeat(1fr);
+  align-items: center;
   &__list {
     display: flex;
     align-items: center;
