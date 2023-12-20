@@ -4120,3 +4120,21 @@ textarea:user-invalid::placeholder {
   visibility: visible; /* Показать активную модалку */
   opacity: 1;
 }
+
+.advantages__card {
+  border-radius: initial;
+  overflow: initial;
+  transition: scale 0.3s ease-in-out;
+}
+
+.advantages__details {
+  border-radius: 0 0 4px 4px;
+}
+
+.advantages .swiper {
+  overflow: visible;
+}
+
+.our-projects__list {
+  max-width: max-content;
+}

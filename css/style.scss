@@ -68,3 +68,20 @@
 @import "activity/header-sticky";
 @import "activity/header-search-active";
 @import "activity/modal-show";
+
+// new style
+.advantages__card {
+  border-radius: initial;
+  overflow: initial;
+  transition: scale 0.3s ease-in-out;
+}
+.advantages__details {
+  border-radius: 0 0 4px 4px;
+}
+.advantages .swiper {
+  overflow: visible;
+}
+
+.our-projects__list {
+  max-width: max-content;
+}
